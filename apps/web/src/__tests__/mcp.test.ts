@@ -73,7 +73,7 @@ describe("POST /api/mcp", () => {
     mockedCreateKanClient.mockClear();
     mockedEnv.mockReset();
     mockedEnv.mockImplementation((key: string) => {
-      if (key === "NEXT_PUBLIC_BASE_URL") return "https://kan.bn";
+      if (key === "NEXT_PUBLIC_BASE_URL") return "https://opscape.com";
       return undefined;
     });
     clearPaidWorkspaceCache();
@@ -81,7 +81,7 @@ describe("POST /api/mcp", () => {
 
   it("rejects a free-plan-only workspace on Kan Cloud with 403", async () => {
     mockedEnv.mockImplementation((key: string) => {
-      if (key === "NEXT_PUBLIC_BASE_URL") return "https://kan.bn";
+      if (key === "NEXT_PUBLIC_BASE_URL") return "https://opscape.com";
       if (key === "NEXT_PUBLIC_KAN_ENV") return "cloud";
       return undefined;
     });
@@ -96,7 +96,7 @@ describe("POST /api/mcp", () => {
 
   it("allows a team-plan workspace on Kan Cloud through", async () => {
     mockedEnv.mockImplementation((key: string) => {
-      if (key === "NEXT_PUBLIC_BASE_URL") return "https://kan.bn";
+      if (key === "NEXT_PUBLIC_BASE_URL") return "https://opscape.com";
       if (key === "NEXT_PUBLIC_KAN_ENV") return "cloud";
       return undefined;
     });
@@ -129,7 +129,7 @@ describe("POST /api/mcp", () => {
 
   it("strips a trailing slash from NEXT_PUBLIC_BASE_URL", async () => {
     mockedEnv.mockImplementation((key: string) => {
-      if (key === "NEXT_PUBLIC_BASE_URL") return "https://kan.bn/";
+      if (key === "NEXT_PUBLIC_BASE_URL") return "https://opscape.com/";
       return undefined;
     });
 
@@ -137,7 +137,7 @@ describe("POST /api/mcp", () => {
     await handler(req, res);
 
     expect(mockedCreateKanClient).toHaveBeenCalledWith(
-      expect.objectContaining({ baseUrl: "https://kan.bn" }),
+      expect.objectContaining({ baseUrl: "https://opscape.com" }),
     );
   });
 
@@ -155,7 +155,7 @@ describe("POST /api/mcp", () => {
 
   it("returns a clean 500 instead of throwing when the plan check fails unexpectedly", async () => {
     mockedEnv.mockImplementation((key: string) => {
-      if (key === "NEXT_PUBLIC_BASE_URL") return "https://kan.bn";
+      if (key === "NEXT_PUBLIC_BASE_URL") return "https://opscape.com";
       if (key === "NEXT_PUBLIC_KAN_ENV") return "cloud";
       return undefined;
     });
@@ -170,7 +170,7 @@ describe("POST /api/mcp", () => {
 
   it("skips the redundant plan check on a second call with the same token", async () => {
     mockedEnv.mockImplementation((key: string) => {
-      if (key === "NEXT_PUBLIC_BASE_URL") return "https://kan.bn";
+      if (key === "NEXT_PUBLIC_BASE_URL") return "https://opscape.com";
       if (key === "NEXT_PUBLIC_KAN_ENV") return "cloud";
       return undefined;
     });
@@ -191,7 +191,7 @@ describe("POST /api/mcp", () => {
 
   it("returns a real 429 instead of a generic 500 when the plan check is rate limited", async () => {
     mockedEnv.mockImplementation((key: string) => {
-      if (key === "NEXT_PUBLIC_BASE_URL") return "https://kan.bn";
+      if (key === "NEXT_PUBLIC_BASE_URL") return "https://opscape.com";
       if (key === "NEXT_PUBLIC_KAN_ENV") return "cloud";
       return undefined;
     });

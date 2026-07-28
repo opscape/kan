@@ -40,7 +40,7 @@ export const MagicLinkTemplate = ({
             color: "#232323",
           }}
         >
-          kan.bn
+          Opscape
         </Heading>
         <Heading
           style={{ fontSize: "24px", fontWeight: "bold", color: "#232323" }}

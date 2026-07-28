@@ -2,7 +2,7 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { env } from "next-runtime-env";
 
-const MCP_HOSTNAMES = new Set(["mcp.kan.bn", "mcp-staging.kan.bn"]);
+const MCP_HOSTNAMES = new Set(["mcp.opscape.com", "mcp-staging.opscape.com"]);
 
 const OAUTH_DISCOVERY_PATHS = new Set([
   "/.well-known/oauth-protected-resource",

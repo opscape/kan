@@ -144,7 +144,7 @@ export default function InvitePage() {
             {!error ? (
               <p className="mt-4 text-center text-sm text-light-900 dark:text-dark-800">
                 {isCloudEnv
-                  ? t`You've been invited to join a workspace on kan.bn.`
+                  ? t`You've been invited to join a workspace on Opscape.`
                   : t`You've been invited to join a workspace.`}
               </p>
             ) : (

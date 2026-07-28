@@ -46,6 +46,7 @@ type AppPropsWithLayout = AppProps & {
 };
 
 const MyApp: AppType = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const gaId = env("NEXT_PUBLIC_GA_ID");
   const posthogKey = env("NEXT_PUBLIC_POSTHOG_KEY");
 
   useEffect(() => {
@@ -79,6 +80,22 @@ const MyApp: AppType = ({ Component, pageProps }: AppPropsWithLayout) => {
           src="https://cloud.umami.is/script.js"
           data-website-id={env("NEXT_PUBLIC_UMAMI_ID")}
         />
+      )}
+      {gaId && (
+        <>
+          <Script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+          />
+          <Script id="google-analytics">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gaId}');
+            `}
+          </Script>
+        </>
       )}
       <script src="/__ENV.js" />
       <main className="font-sans">

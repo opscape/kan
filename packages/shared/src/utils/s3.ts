@@ -24,7 +24,7 @@ export function createS3Client() {
   // S3_REGION explicitly to their bucket's actual region.
   return new S3Client({
     region: process.env.S3_REGION ?? "us-east-1",
-    endpoint: process.env.S3_ENDPOINT ?? "",
+    endpoint: process.env.S3_ENDPOINT || undefined,
     forcePathStyle: process.env.S3_FORCE_PATH_STYLE === "true",
     credentials,
   });
@@ -130,4 +130,3 @@ export async function generateAttachmentUrl(
     return null;
   }
 }
-

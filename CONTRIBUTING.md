@@ -10,7 +10,7 @@ Feature PRs opened without a prior approved issue will be closed without review 
 
 The process is:
 
-1. Open a [feature request](https://github.com/kanbn/kan/issues/new?template=feature_request.md) and describe what you want to build
+1. Open a [feature request](https://github.com/opscape/kan/issues/new?template=feature_request.md) and describe what you want to build
 2. Wait for a maintainer to respond and signal approval (we aim to respond within a few days)
 3. Once approved, open a PR that links the issue
 
@@ -45,9 +45,9 @@ Bug fixes and documentation improvements don't need prior approval - just open a
 
 ## Need help?
 
-- Join our [Discord server](https://discord.gg/e6ejRb6CmT)
+- Join our [Discord server](https://discord.gg/3Bm82XdFtg)
 - Check existing issues and PRs before opening new ones
-- Email [henry@kan.bn](mailto:henry@kan.bn) for major concerns
+- Email [henry@opscape.com](mailto:henry@opscape.com) for major concerns
 
 ## License
 

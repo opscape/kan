@@ -189,7 +189,7 @@ export default function UserMenu({
               </Menu.Item>
               <Menu.Item>
                 <Link
-                  href="mailto:support@kan.bn"
+                  href="mailto:support@opscape.com"
                   target="_blank"
                   rel="noreferrer"
                   onClick={handleLinkClick}
@@ -200,7 +200,7 @@ export default function UserMenu({
               </Menu.Item>
               <Menu.Item>
                 <Link
-                  href="https://docs.kan.bn"
+                  href="https://docs.opscape.com"
                   target="_blank"
                   rel="noreferrer"
                   onClick={handleLinkClick}
@@ -234,8 +234,8 @@ export default function UserMenu({
                   <Link
                     href={
                       env.NEXT_PUBLIC_APP_VERSION.includes("+")
-                        ? `https://github.com/kanbn/kan/commit/${env.NEXT_PUBLIC_APP_VERSION.split("+")[1]}`
-                        : `https://github.com/kanbn/kan/releases/tag/v${env.NEXT_PUBLIC_APP_VERSION}`
+                        ? `https://github.com/opscape/kan/commit/${env.NEXT_PUBLIC_APP_VERSION.split("+")[1]}`
+                        : `https://github.com/opscape/kan/releases/tag/v${env.NEXT_PUBLIC_APP_VERSION}`
                     }
                     target="_blank"
                     rel="noreferrer"

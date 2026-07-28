@@ -388,7 +388,7 @@ export function Auth({
                   enable email and password sign in, or configure an OAuth
                   provider. See the{" "}
                   <Link
-                    href="https://docs.kan.bn/guides/self-hosting/introduction"
+                    href="https://docs.opscape.com/guides/self-hosting/introduction"
                     target="_blank"
                     rel="noreferrer"
                     className="text-blue-600 underline dark:text-blue-300"

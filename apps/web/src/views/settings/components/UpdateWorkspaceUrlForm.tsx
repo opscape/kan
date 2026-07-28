@@ -131,7 +131,7 @@ const UpdateWorkspaceUrlForm = ({
           }
           prefix={
             env("NEXT_PUBLIC_KAN_ENV") === "cloud"
-              ? "kan.bn/"
+              ? "opscape.com/"
               : `${env("NEXT_PUBLIC_BASE_URL")}/`
           }
           iconRight={

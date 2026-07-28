@@ -1,0 +1,81 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "opscape",
+  "logo": {
+    "dark": "/logo/dark.svg",
+    "light": "/logo/light.svg",
+    "href": "https://opscape.com"
+  },
+  "favicon": "./favicon.png",
+  "colors": {
+    "primary": "#000000",
+    "light": "#EDEDED",
+    "dark": "#161616"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Sign in",
+        "href": "https://opscape.com/login"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Go to app",
+      "href": "https://opscape.com/boards"
+    }
+  },
+  "navigation": {
+    "anchors": [
+      {
+        "anchor": "Documentation",
+        "icon": "book-open",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": ["introduction"]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              {
+                "group": "Self-Hosting",
+                "pages": [
+                  "guides/self-hosting/introduction",
+                  "guides/self-hosting/s3"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Import",
+            "pages": ["imports/trello"]
+          }
+        ]
+      },
+      {
+        "anchor": "API Reference",
+        "icon": "square-terminal",
+        "openapi": "https://opscape.com/api/v1/openapi.json",
+        "groups": [
+          {
+            "group": "API Documentation",
+            "pages": ["api-reference/introduction"]
+          }
+        ]
+      },
+      {
+        "anchor": "GitHub",
+        "icon": "github",
+        "href": "https://github.com/opscape"
+      }
+    ]
+  },
+  "footer": {
+    "socials": {
+      "discord": "https://discord.gg/3Bm82XdFtg",
+      "github": "https://github.com/opscape"
+    }
+  }
+}

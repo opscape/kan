@@ -1,6 +1,6 @@
 services:
   migrator:
-    image: ghcr.io/kanbn/kan-migrate:latest
+    image: ghcr.io/opscape/kan-migrate:latest
     container_name: ${MIGRATOR_CONTAINER_NAME:-kan-migrate}
     build:
       context: ..
@@ -13,7 +13,7 @@ services:
     restart: "no"
 
   web:
-    image: ghcr.io/kanbn/kan:latest
+    image: ghcr.io/opscape/kan:latest
     container_name: ${CONTAINER_NAME:-kan-web}
     ports:
       - "${WEB_PORT:-3000}:3000"
@@ -96,6 +96,7 @@ services:
       - BETTER_AUTH_ALLOWED_DOMAINS=${BETTER_AUTH_ALLOWED_DOMAINS}
 
       # Analytics
+      - NEXT_PUBLIC_GA_ID=${NEXT_PUBLIC_GA_ID}
       - NEXT_PUBLIC_UMAMI_ID=${NEXT_PUBLIC_UMAMI_ID}
       - NEXT_PUBLIC_POSTHOG_KEY=${NEXT_PUBLIC_POSTHOG_KEY}
       - NEXT_PUBLIC_POSTHOG_HOST=${NEXT_PUBLIC_POSTHOG_HOST}

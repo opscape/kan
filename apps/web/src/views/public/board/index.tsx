@@ -249,12 +249,12 @@ export default function PublicBoardView() {
 
           {!HIDE_POWERED_BY && (
             <a
-              href="https://kan.bn"
+              href="https://opscape.com"
               target="_blank"
               rel="noreferrer noopener"
               className="mr-1.5 ml-auto text-xs text-light-900 transition-colors hover:text-light-1000 dark:text-dark-900 dark:hover:text-dark-1000"
             >
-              Powered by <span className="font-semibold">Kan</span>
+              Powered by <span className="font-semibold">Opscape</span>
             </a>
           )}
         </div>

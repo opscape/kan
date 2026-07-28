@@ -21,4 +21,4 @@
 Closes #<!-- issue number -->
 
 > **Feature PRs without a linked, approved issue will be closed without review.**
-> Open or comment on a [feature request](https://github.com/kanbn/kan/issues/new?template=feature_request.md) first and wait for maintainer approval before building.
+> Open or comment on a [feature request](https://github.com/opscape/kan/issues/new?template=feature_request.md) first and wait for maintainer approval before building.

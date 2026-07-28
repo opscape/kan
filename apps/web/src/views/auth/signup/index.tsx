@@ -34,7 +34,7 @@ export default function SignUpPage({ socialProviders }: SocialProvidersProps) {
   if (isSignUpDisabled && !isInviteFlow) {
     return (
       <>
-        <PageHead title={t`Sign up | kan.bn`} />
+        <PageHead title={t`Sign up | Opscape`} />
         <AuthLayout title={t`Sign up disabled`}>
           <p className="text-center text-sm text-light-900 dark:text-dark-900">
             {t`Sign up is currently disabled. Please try again later.`}
@@ -46,7 +46,7 @@ export default function SignUpPage({ socialProviders }: SocialProvidersProps) {
 
   return (
     <>
-      <PageHead title={t`Sign up | kan.bn`} />
+      <PageHead title={t`Sign up | Opscape`} />
       <AuthLayout
         title={isMagicLinkSent ? t`Check your inbox` : t`Get started`}
         footer={

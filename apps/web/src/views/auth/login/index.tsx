@@ -31,7 +31,7 @@ export default function LoginPage({ socialProviders }: SocialProvidersProps) {
 
   return (
     <>
-      <PageHead title={t`Login | kan.bn`} />
+      <PageHead title={t`Login | Opscape`} />
       <AuthLayout
         title={isMagicLinkSent ? t`Check your inbox` : t`Welcome back`}
         footer={

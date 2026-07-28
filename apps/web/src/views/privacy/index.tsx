@@ -15,7 +15,7 @@ export default function PrivacyView() {
 
   return (
     <Layout>
-      <PageHead title="Privacy Policy | kan.bn" />
+      <PageHead title="Privacy Policy | Opscape" />
       <div className="flex flex-col items-center">
         <div className="mb-20 flex h-full w-full max-w-[720px] flex-col px-4">
           <h1 className="pt-36 text-2xl font-semibold tracking-[-0.03em] text-light-1000 lg:text-3xl dark:text-dark-1000">

@@ -53,14 +53,17 @@ const StatusMarker = () => (
 const Footer = () => {
   const navigation = {
     documentation: [
-      { name: t`Getting started`, href: "https://docs.kan.bn/introduction" },
+      {
+        name: t`Getting started`,
+        href: "https://docs.opscape.com/introduction",
+      },
       {
         name: t`Importing from Trello`,
-        href: "https://docs.kan.bn/imports/trello",
+        href: "https://docs.opscape.com/imports/trello",
       },
       {
         name: t`API Reference`,
-        href: "https://docs.kan.bn/api-reference/introduction",
+        href: "https://docs.opscape.com/api-reference/introduction",
       },
       { name: t`MCP server`, href: "https://docs.kan.bn/mcp" },
       {
@@ -70,12 +73,12 @@ const Footer = () => {
     ],
     company: [
       { name: t`Roadmap`, href: "/kan/roadmap" },
-      { name: t`GitHub`, href: "https://github.com/kanbn/kan" },
+      { name: t`GitHub`, href: "https://github.com/opscape/kan" },
       {
         name: t`Discussions`,
-        href: "https://github.com/kanbn/kan/discussions",
+        href: "https://github.com/opscape/kan/discussions",
       },
-      { name: t`Contact`, href: "mailto:support@kan.bn" },
+      { name: t`Contact`, href: "mailto:support@opscape.com" },
       { name: t`Open source friends`, href: "/oss-friends" },
     ],
     legal: [
@@ -83,7 +86,7 @@ const Footer = () => {
       { name: t`Privacy policy`, href: "/privacy" },
       {
         name: t`License`,
-        href: "https://github.com/kanbn/kan?tab=AGPL-3.0-1-ov-file#readme",
+        href: "https://github.com/opscape/kan?tab=AGPL-3.0-1-ov-file#readme",
       },
     ],
     resources: [
@@ -107,7 +110,7 @@ const Footer = () => {
           <div>
             <div className="flex items-center gap-2">
               <Link
-                href="https://github.com/kanbn/kan"
+                href="https://github.com/opscape/kan"
                 target="_blank"
                 aria-label="GitHub"
               >

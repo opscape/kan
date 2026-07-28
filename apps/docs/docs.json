@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Kan",
+  "name": "Opscape",
   "colors": {
     "primary": "#000000",
     "light": "#EDEDED",
@@ -10,7 +10,7 @@
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg",
-    "href": "https://kan.bn"
+    "href": "https://opscape.com"
   },
   "favicon": "/favicon.png",
   "navigation": {
@@ -69,12 +69,12 @@
     "primary": {
       "type": "button",
       "label": "Sign in",
-      "href": "https://kan.bn/login"
+      "href": "https://opscape.com/login"
     }
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/kanbn/kan"
+      "github": "https://github.com/opscape/kan"
     }
   },
   "redirects": [

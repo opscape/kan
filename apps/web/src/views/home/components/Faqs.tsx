@@ -53,7 +53,7 @@ const Faqs = () => {
           <Trans>
             Follow our{" "}
             <Link
-              href="https://docs.kan.bn/imports/trello"
+              href="https://docs.opscape.com/imports/trello"
               className="underline"
             >
               step-by-step guide
@@ -78,7 +78,7 @@ const Faqs = () => {
           <Trans>
             Yes, Kan is licensed under AGPL-3.0. You can browse the code or
             self-host it by following the instructions in our{" "}
-            <Link href="https://github.com/kanbn/kan" className="underline">
+            <Link href="https://github.com/opscape/kan" className="underline">
               GitHub repo
             </Link>
             .

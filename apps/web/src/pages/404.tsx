@@ -9,7 +9,7 @@ import Layout from "~/views/home/components/Layout";
 export default function NotFoundPage() {
   return (
     <Layout>
-      <PageHead title={t`404 - Page Not Found | kan.bn`} />
+      <PageHead title={t`404 - Page Not Found | Opscape`} />
       <div className="flex min-h-[70vh] flex-col justify-center px-4 pt-36 pb-24">
         <p className="text-sm font-medium text-light-900 dark:text-dark-800">
           404

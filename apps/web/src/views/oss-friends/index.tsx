@@ -18,7 +18,7 @@ export default function OSSFriendsView({
 }) {
   return (
     <Layout>
-      <PageHead title={`${t`Open source friends`} | kan.bn`} />
+      <PageHead title={`${t`Open source friends`} | Opscape`} />
 
       <div className="px-4 pt-36 pb-24">
         <h1 className="text-2xl font-semibold tracking-[-0.03em] text-light-1000 lg:text-3xl dark:text-dark-1000">

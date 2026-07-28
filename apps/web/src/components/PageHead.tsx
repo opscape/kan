@@ -5,7 +5,7 @@ import { env } from "@kan/shared/env";
 
 const DEFAULT_DESCRIPTION =
   "Kanban for teams and agents. A simpler, faster alternative to Trello with a built-in MCP server.";
-const DEFAULT_IMAGE = "/hero-light.png";
+const DEFAULT_IMAGE = "/hero-light.webp";
 
 export const PageHead = ({
   title,

@@ -1,6 +1,6 @@
 services:
   migrate:
-    image: ghcr.io/kanbn/kan-migrate:latest
+    image: ghcr.io/opscape/kan-migrate:latest
     container_name: ${CONTAINER_NAME:-kan-migrate}
     networks:
       - kan-network
@@ -16,7 +16,7 @@ services:
     restart: "no"
 
   web:
-    image: ghcr.io/kanbn/kan:latest
+    image: ghcr.io/opscape/kan:latest
     container_name: ${CONTAINER_NAME:-kan-web}
     ports:
       - "${WEB_PORT:-3000}:3000"
@@ -85,6 +85,9 @@ services:
       - OIDC_CLIENT_ID=${OIDC_CLIENT_ID}
       - OIDC_CLIENT_SECRET=${OIDC_CLIENT_SECRET}
       - OIDC_DISCOVERY_URL=${OIDC_DISCOVERY_URL}
+
+      # Analytics (optional)
+      - NEXT_PUBLIC_GA_ID=${NEXT_PUBLIC_GA_ID}
 
       # OAuth providers (optional)
       - BETTER_AUTH_TRUSTED_ORIGINS=${BETTER_AUTH_TRUSTED_ORIGINS}

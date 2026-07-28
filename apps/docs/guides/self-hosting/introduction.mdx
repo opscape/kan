@@ -25,7 +25,7 @@ This guide introduces how to self-host Kan. It starts with the minimal Docker Co
   For file uploads (avatars), OAuth, and other advanced options, see the
   Environment Variables section in the README and the dedicated [S3
   guide](/guides/self-hosting/s3). The [full
-  compose](https://github.com/kanbn/kan/blob/main/docker-compose.yml) in the
+  compose](https://github.com/opscape/kan/blob/main/docker-compose.yml) in the
   repo includes a richer configuration via <code>.env</code>.
 </Note>
 
@@ -43,7 +43,7 @@ This guide introduces how to self-host Kan. It starts with the minimal Docker Co
     ```yaml
     services:
       migrate:
-        image: ghcr.io/kanbn/kan-migrate:latest
+        image: ghcr.io/opscape/kan-migrate:latest
         container_name: kan-migrate
         networks:
           - kan-network
@@ -55,7 +55,7 @@ This guide introduces how to self-host Kan. It starts with the minimal Docker Co
         restart: "no"
 
       web:
-        image: ghcr.io/kanbn/kan:latest
+        image: ghcr.io/opscape/kan:latest
         container_name: kan-web
         ports:
           - "3000:3000"
@@ -99,7 +99,7 @@ This guide introduces how to self-host Kan. It starts with the minimal Docker Co
     ```
 
     <Tip>
-      The example above is intentionally minimal. The repository provides a more feature-complete compose file at [docker-compose.yml](https://github.com/kanbn/kan/blob/main/docker-compose.yml) if you want environment-based configuration, OAuth, S3, and more.
+      The example above is intentionally minimal. The repository provides a more feature-complete compose file at [docker-compose.yml](https://github.com/opscape/kan/blob/main/docker-compose.yml) if you want environment-based configuration, OAuth, S3, and more.
     </Tip>
 
   </Step>
@@ -136,7 +136,7 @@ This guide introduces how to self-host Kan. It starts with the minimal Docker Co
       POSTGRES_URL=postgresql://kan:your_postgres_password@postgres:5432/kan_db
 
       # Optional: Email
-      EMAIL_FROM="Kan <hello@mail.kan.bn>"
+      EMAIL_FROM="Kan <hello@mail.opscape.com>"
       SMTP_HOST=smtp.resend.com
       SMTP_PORT=465
       SMTP_USER=resend
@@ -158,5 +158,5 @@ This guide introduces how to self-host Kan. It starts with the minimal Docker Co
 
 ## Reference
 
-- [GitHub README](https://github.com/kanbn/kan/blob/main/README.md#self-hosting-)
-- [GitHub docker-compose.yml](https://github.com/kanbn/kan/blob/main/docker-compose.yml)
+- [GitHub README](https://github.com/opscape/kan/blob/main/README.md#self-hosting-)
+- [GitHub docker-compose.yml](https://github.com/opscape/kan/blob/main/docker-compose.yml)

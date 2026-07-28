@@ -1,10 +1,10 @@
+import { randomUUID } from "node:crypto";
 import { PutObjectCommand } from "@aws-sdk/client-s3";
 import { createAuthMiddleware } from "better-auth/api";
 import { env } from "next-runtime-env";
 
 import type { dbClient } from "@kan/db/client";
 import * as memberRepo from "@kan/db/repository/member.repo";
-import * as userRepo from "@kan/db/repository/user.repo";
 import { createSubscriber, triggerSubscriberWorkflow } from "@kan/email";
 import { createLogger } from "@kan/logger";
 import { createS3Client } from "@kan/shared";
@@ -13,8 +13,8 @@ import { downloadImage } from "./utils";
 
 const log = createLogger("auth");
 
-type BetterAuthUser = {
-  id: string;
+type BetterAuthUserFields = {
+  id?: string;
   createdAt: Date;
   updatedAt: Date;
   email: string;
@@ -22,13 +22,20 @@ type BetterAuthUser = {
   name: string;
   image?: string | null | undefined;
   stripeCustomerId?: string | null | undefined;
-} & Record<string, unknown>;
+};
+
+type BetterAuthUser = BetterAuthUserFields & { id: string } & Record<
+  string,
+  unknown
+>;
+
+type PendingBetterAuthUser = BetterAuthUserFields & Record<string, unknown>;
 
 export function createDatabaseHooks(db: dbClient) {
   return {
     user: {
       create: {
-        async before(user: BetterAuthUser, _context: unknown) {
+        async before(user: PendingBetterAuthUser, _context: unknown) {
           if (env("NEXT_PUBLIC_DISABLE_SIGN_UP")?.toLowerCase() === "true") {
             const pendingInvitation = await memberRepo.getByEmailAndStatus(
               db,
@@ -52,46 +59,68 @@ export function createDatabaseHooks(db: dbClient) {
               return Promise.resolve(false);
             }
           }
-          return Promise.resolve(true);
-        },
-        async after(user: BetterAuthUser, _context: unknown) {
-          let avatarKey = user.image;
+
           const storageDomain = process.env.NEXT_PUBLIC_STORAGE_DOMAIN;
           if (
-            user.image &&
-            storageDomain &&
-            !user.image.includes(storageDomain)
+            !user.image ||
+            !storageDomain ||
+            user.image.includes(storageDomain)
           ) {
-            try {
-              const client = createS3Client();
-
-              const allowedFileExtensions = ["jpg", "jpeg", "png", "webp"];
-
-              const fileExtension =
-                user.image.split(".").pop()?.split("?")[0] ?? "jpg";
-              const key = `${user.id}/avatar.${!allowedFileExtensions.includes(fileExtension) ? "jpg" : fileExtension}`;
-
-              const imageBuffer = await downloadImage(user.image);
-
-              await client.send(
-                new PutObjectCommand({
-                  Bucket: env("NEXT_PUBLIC_AVATAR_BUCKET_NAME") ?? "",
-                  Key: key,
-                  Body: imageBuffer,
-                  ContentType: `image/${!allowedFileExtensions.includes(fileExtension) ? "jpeg" : fileExtension}`,
-                  ACL: "public-read",
-                }),
+            if (user.image?.startsWith("data:")) {
+              log.warn(
+                { userId: user.id },
+                "Discarding provider avatar because object storage is not configured",
               );
-
-              avatarKey = key;
-
-              await userRepo.update(db, user.id, {
-                image: key,
-              });
-            } catch (error) {
-              console.error(error);
+              return { data: { ...user, image: null } };
             }
+
+            return Promise.resolve(true);
           }
+
+          try {
+            const userId = user.id ?? randomUUID();
+            const client = createS3Client();
+            const dataImageMatch = user.image.match(
+              /^data:image\/(jpeg|png|webp);base64,/i,
+            );
+            const extensionFromUrl = user.image
+              .split(".")
+              .pop()
+              ?.split("?")[0]
+              ?.toLowerCase();
+            const extension =
+              dataImageMatch?.[1] ??
+              (extensionFromUrl === "jpg" ||
+              extensionFromUrl === "jpeg" ||
+              extensionFromUrl === "png" ||
+              extensionFromUrl === "webp"
+                ? extensionFromUrl
+                : "jpg");
+            const normalizedExtension =
+              extension === "jpg" ? "jpeg" : extension;
+            const key = `${userId}/avatar.${extension}`;
+            const imageBuffer = await downloadImage(user.image);
+
+            await client.send(
+              new PutObjectCommand({
+                Bucket: env("NEXT_PUBLIC_AVATAR_BUCKET_NAME") ?? "",
+                Key: key,
+                Body: imageBuffer,
+                ContentType: `image/${normalizedExtension}`,
+              }),
+            );
+
+            return { data: { ...user, id: userId, image: key } };
+          } catch (error) {
+            log.warn(
+              { err: error, userId: user.id },
+              "Unable to store provider avatar; creating user without an avatar",
+            );
+            return { data: { ...user, image: null } };
+          }
+        },
+        async after(user: BetterAuthUser, _context: unknown) {
+          const avatarKey = user.image;
 
           const [firstName, ...rest] = (user.name || "")
             .split(" ")

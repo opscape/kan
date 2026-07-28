@@ -63,7 +63,7 @@ const Pricing = () => {
     {
       name: t`Self Host`,
       id: "tier-self-host",
-      href: "https://github.com/kanbn/kan",
+      href: "https://github.com/opscape/kan",
       buttonText: t`View docs`,
       price: { monthly: "-", annually: "-" },
       description: t`Host Kan on your own infrastructure. Ideal for organisations that need complete control over their data.`,

@@ -117,7 +117,7 @@ describe("middleware", () => {
 
     const response = middleware(
       new NextRequest("http://localhost:3000/", {
-        headers: { host: "kan.bn" },
+        headers: { host: "opscape.com" },
       }),
     );
 
@@ -137,7 +137,7 @@ describe("middleware", () => {
 
       const response = middleware(
         new NextRequest(`http://localhost:3000${pathname}`, {
-          headers: { host: "mcp.kan.bn" },
+          headers: { host: "mcp.opscape.com" },
         }),
       );
 
@@ -154,7 +154,7 @@ describe("middleware", () => {
     const response = middleware(
       new NextRequest(
         "http://localhost:3000/.well-known/oauth-protected-resource",
-        { headers: { host: "kan.bn" } },
+        { headers: { host: "opscape.com" } },
       ),
     );
 

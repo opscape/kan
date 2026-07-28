@@ -6,17 +6,17 @@
 </div>
 
 <p align="center">
-  <a href="https://kan.bn/kan/roadmap">Roadmap</a>
+  <a href="https://opscape.com/kan/roadmap">Roadmap</a>
   ·
-  <a href="https://kan.bn">Website</a>
+  <a href="https://opscape.com">Website</a>
   ·
-  <a href="https://docs.kan.bn">Docs</a>
+  <a href="https://docs.opscape.com">Docs</a>
   ·
-  <a href="https://github.com/kanbn/kan/discussions">Discussions</a>
+  <a href="https://github.com/opscape/kan/discussions">Discussions</a>
 </p>
 
 <div align="center">
-  <a href="https://github.com/kanbn/kan/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-AGPLv3-purple"></a>
+  <a href="https://github.com/opscape/kan/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-AGPLv3-purple"></a>
 </div>
 
 ## Features
@@ -30,7 +30,7 @@
 - **Templates**: Save time with reusable custom board templates
 - **Integrations (coming soon)**: Connect your favourite tools
 
-See our [roadmap](https://kan.bn/kan/roadmap) for upcoming features.
+See our [roadmap](https://opscape.com/kan/roadmap) for upcoming features.
 
 ## Screenshot
 
@@ -38,12 +38,12 @@ See our [roadmap](https://kan.bn/kan/roadmap) for upcoming features.
 
 ## Made With
 
-- [Next.js](https://nextjs.org/?ref=kan.bn)
-- [tRPC](https://trpc.io/?ref=kan.bn)
-- [Better Auth](https://better-auth.com/?ref=kan.bn)
-- [Tailwind CSS](https://tailwindcss.com/?ref=kan.bn)
-- [Drizzle ORM](https://orm.drizzle.team/?ref=kan.bn)
-- [React Email](https://react.email/?ref=kan.bn)
+- [Next.js](https://nextjs.org/?ref=opscape.com)
+- [tRPC](https://trpc.io/?ref=opscape.com)
+- [Better Auth](https://better-auth.com/?ref=opscape.com)
+- [Tailwind CSS](https://tailwindcss.com/?ref=opscape.com)
+- [Drizzle ORM](https://orm.drizzle.team/?ref=opscape.com)
+- [React Email](https://react.email/?ref=opscape.com)
 
 ## Self Hosting
 
@@ -83,7 +83,7 @@ The application will be available at http://localhost:3000 (or the port specifie
 1. Clone the repository (or fork)
 
 ```bash
-git clone https://github.com/kanbn/kan.git
+git clone https://github.com/opscape/kan.git
 ```
 
 2. Install dependencies
@@ -129,7 +129,7 @@ npx -y @kan.bn/mcp
 
 Configure it with two environment variables: `KAN_BASE_URL` (your Kan instance) and `KAN_API_TOKEN` (from **Settings → API Keys**). Then point your client's MCP config at the `npx -y @kan.bn/mcp` command.
 
-See the [MCP Server docs](https://docs.kan.bn/integrations/mcp-server) for per-client config (Claude Desktop, Codex, and others), example prompts, the full tool reference, and troubleshooting.
+See the [MCP Server docs](https://docs.opscape.com/integrations/mcp-server) for per-client config (Claude Desktop, Codex, and others), example prompts, the full tool reference, and troubleshooting.
 
 ## Contributing
 
@@ -137,8 +137,8 @@ We welcome contributions! Please read our [contribution guidelines](CONTRIBUTING
 
 ## Contributors
 
-<a href="https://github.com/kanbn/kan/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=kanbn/kan" />
+<a href="https://github.com/opscape/kan/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=opscape/kan" />
 </a>
 
 ## Sponsors
@@ -153,4 +153,4 @@ Kan is licensed under the [AGPLv3 license](LICENSE).
 
 ## Contact
 
-For support or to get in touch, please email [henry@kan.bn](mailto:henry@kan.bn) or start a [GitHub Discussion](https://github.com/kanbn/kan/discussions).
+For support or to get in touch, please email [henry@opscape.com](mailto:henry@opscape.com) or start a [GitHub Discussion](https://github.com/opscape/kan/discussions).

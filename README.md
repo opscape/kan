@@ -6,17 +6,17 @@
 </div>
 
 <p align="center">
-  <a href="https://kan.bn/kan/roadmap">Roadmap</a>
+  <a href="https://opscape.com/kan/roadmap">Roadmap</a>
   ·
-  <a href="https://kan.bn">Website</a>
+  <a href="https://opscape.com">Website</a>
   ·
-  <a href="https://docs.kan.bn">Docs</a>
+  <a href="https://docs.opscape.com">Docs</a>
   ·
-  <a href="https://discord.gg/e6ejRb6CmT">Discord</a>
+  <a href="https://discord.gg/3Bm82XdFtg">Discord</a>
 </p>
 
 <div align="center">
-  <a href="https://github.com/kanbn/kan/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-AGPLv3-purple"></a>
+  <a href="https://github.com/opscape/kan/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-AGPLv3-purple"></a>
 </div>
 
 ## Features 💫
@@ -30,7 +30,7 @@
 - 🎨 **Templates** : Save time with reusable custom board templates
 - ⚡️ **Integrations (coming soon)** : Connect your favourite tools
 
-See our [roadmap](https://kan.bn/kan/roadmap) for upcoming features.
+See our [roadmap](https://opscape.com/kan/roadmap) for upcoming features.
 
 ## Screenshot 👁️
 
@@ -38,12 +38,12 @@ See our [roadmap](https://kan.bn/kan/roadmap) for upcoming features.
 
 ## Made With 🛠️
 
-- [Next.js](https://nextjs.org/?ref=kan.bn)
-- [tRPC](https://trpc.io/?ref=kan.bn)
-- [Better Auth](https://better-auth.com/?ref=kan.bn)
-- [Tailwind CSS](https://tailwindcss.com/?ref=kan.bn)
-- [Drizzle ORM](https://orm.drizzle.team/?ref=kan.bn)
-- [React Email](https://react.email/?ref=kan.bn)
+- [Next.js](https://nextjs.org/?ref=opscape.com)
+- [tRPC](https://trpc.io/?ref=opscape.com)
+- [Better Auth](https://better-auth.com/?ref=opscape.com)
+- [Tailwind CSS](https://tailwindcss.com/?ref=opscape.com)
+- [Drizzle ORM](https://orm.drizzle.team/?ref=opscape.com)
+- [React Email](https://react.email/?ref=opscape.com)
 
 ## Self Hosting 🐳
 
@@ -66,7 +66,7 @@ Alternatively, you can self-host Kan with Docker Compose. This will set up every
 ```yaml
 services:
   migrate:
-    image: ghcr.io/kanbn/kan-migrate:latest
+    image: ghcr.io/opscape/kan-migrate:latest
     container_name: kan-migrate
     networks:
       - kan-network
@@ -78,7 +78,7 @@ services:
     restart: "no"
 
   web:
-    image: ghcr.io/kanbn/kan:latest
+    image: ghcr.io/opscape/kan:latest
     container_name: kan-web
     ports:
       - "${WEB_PORT:-3000}:3000"
@@ -146,7 +146,7 @@ For the complete Docker Compose configuration with all optional features, see [d
 1. Clone the repository (or fork)
 
 ```bash
-git clone https://github.com/kanbn/kan.git
+git clone https://github.com/opscape/kan.git
 ```
 
 2. Install dependencies
@@ -174,7 +174,7 @@ pnpm dev
 | ----------------------------------------- | --------------------------------------------------------- | ------------------------------------------- | ----------------------------------------------------------- |
 | `POSTGRES_URL`                            | PostgreSQL connection URL                                 | To use external database                    | `postgres://user:pass@localhost:5432/db`                    |
 | `REDIS_URL`                               | Redis connection URL                                      | For rate limiting (optional)                | `redis://localhost:6379` or `redis://redis:6379` (Docker)   |
-| `EMAIL_FROM`                              | Sender email address                                      | For Email                                   | `"Kan <hello@mail.kan.bn>"`                                 |
+| `EMAIL_FROM`                              | Sender email address                                      | For Email                                   | `"Kan <hello@mail.opscape.com>"`                            |
 | `SMTP_HOST`                               | SMTP server hostname                                      | For Email                                   | `smtp.resend.com`                                           |
 | `SMTP_PORT`                               | SMTP server port                                          | For Email                                   | `465`                                                       |
 | `SMTP_USER`                               | SMTP username/email                                       | No                                          | `resend`                                                    |
@@ -182,6 +182,7 @@ pnpm dev
 | `SMTP_SECURE`                             | Use secure SMTP connection (defaults to true if not set)  | For Email                                   | `true`                                                      |
 | `SMTP_REJECT_UNAUTHORIZED`                | Reject invalid certificates (defaults to true if not set) | For Email                                   | `false`                                                     |
 | `NEXT_PUBLIC_DISABLE_EMAIL`               | To disable all email features                             | For Email                                   | `true`                                                      |
+| `NEXT_PUBLIC_GA_ID`                       | Google Analytics measurement ID                           | No                                          | `G-XXXXXXXXXX`                                              |
 | `NEXT_PUBLIC_BASE_URL`                    | Base URL of your installation                             | Yes                                         | `http://localhost:3000`                                     |
 | `NEXT_API_BODY_SIZE_LIMIT`                | Maximum API request body size (defaults to 1mb)           | No                                          | `50mb`                                                      |
 | `BETTER_AUTH_ALLOWED_DOMAINS`             | Comma-separated list of allowed domains for OIDC logins   | For OIDC/Social login                       | `example.com,subsidiary.com`                                |
@@ -204,14 +205,14 @@ pnpm dev
 | `S3_SECRET_ACCESS_KEY`                    | S3 secret key                                             | For file uploads (optional with IRSA)       | `xxx`                                                       |
 | `S3_FORCE_PATH_STYLE`                     | Use path-style URLs for S3                                | For file uploads                            | `true`                                                      |
 | `S3_AVATAR_UPLOAD_LIMIT`                  | Maximum avatar file size in bytes                         | For file uploads                            | `2097152` (2MB)                                             |
-| `NEXT_PUBLIC_STORAGE_URL`                 | Storage service URL                                       | For file uploads                            | `https://storage.kanbn.com`                                 |
-| `NEXT_PUBLIC_STORAGE_DOMAIN`              | Storage domain name                                       | For file uploads                            | `kanbn.com`                                                 |
+| `NEXT_PUBLIC_STORAGE_URL`                 | Storage service URL                                       | For file uploads                            | `https://storage.opscape.com`                               |
+| `NEXT_PUBLIC_STORAGE_DOMAIN`              | Storage domain name                                       | For file uploads                            | `opscape.com`                                               |
 | `NEXT_PUBLIC_USE_VIRTUAL_HOSTED_URLS`     | Use virtual-hosted style URLs (bucket.domain.com)         | For file uploads (optional)                 | `true`                                                      |
 | `NEXT_PUBLIC_AVATAR_BUCKET_NAME`          | S3 bucket name for avatars                                | For file uploads                            | `avatars`                                                   |
 | `NEXT_PUBLIC_ATTACHMENTS_BUCKET_NAME`     | S3 bucket name for attachments                            | For file uploads                            | `attachments`                                               |
 | `NEXT_PUBLIC_ALLOW_CREDENTIALS`           | Allow email & password login                              | For authentication                          | `true`                                                      |
 | `NEXT_PUBLIC_DISABLE_SIGN_UP`             | Disable sign up                                           | For authentication                          | `false`                                                     |
-| `NEXT_PUBLIC_WHITE_LABEL_HIDE_POWERED_BY` | Hide “Powered by kan.bn” on public boards (self-host)     | For white labelling                         | `true`                                                      |
+| `NEXT_PUBLIC_WHITE_LABEL_HIDE_POWERED_BY` | Hide “Powered by Opscape” on public boards (self-host)    | For white labelling                         | `true`                                                      |
 | `KAN_ADMIN_API_KEY`                       | Admin API key for stats and admin endpoints               | For admin/monitoring                        | `your-secret-admin-key`                                     |
 | `LOG_LEVEL`                               | Log verbosity level (debug, info, warn, error)            | No (defaults to debug in dev, info in prod) | `info`                                                      |
 
@@ -350,8 +351,8 @@ We welcome contributions! Please read our [contribution guidelines](CONTRIBUTING
 
 ## Contributors 👥
 
-<a href="https://github.com/kanbn/kan/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=kanbn/kan" />
+<a href="https://github.com/opscape/kan/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=opscape/kan" />
 </a>
 
 ## Sponsors ❤️
@@ -366,4 +367,4 @@ Kan is licensed under the [AGPLv3 license](LICENSE).
 
 ## Contact 📧
 
-For support or to get in touch, please email [henry@kan.bn](mailto:henry@kan.bn) or join our [Discord server](https://discord.gg/e6ejRb6CmT).
+For support or to get in touch, please email [henry@opscape.com](mailto:henry@opscape.com) or join our [Discord server](https://discord.gg/3Bm82XdFtg).

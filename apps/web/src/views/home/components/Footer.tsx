@@ -22,20 +22,23 @@ const StatusMarker = () => (
 const Footer = () => {
   const navigation = {
     documentation: [
-      { name: t`Getting started`, href: "https://docs.kan.bn/introduction" },
+      {
+        name: t`Getting started`,
+        href: "https://docs.opscape.com/introduction",
+      },
       {
         name: t`Importing from Trello`,
-        href: "https://docs.kan.bn/imports/trello",
+        href: "https://docs.opscape.com/imports/trello",
       },
       {
         name: t`API Reference`,
-        href: "https://docs.kan.bn/api-reference/introduction",
+        href: "https://docs.opscape.com/api-reference/introduction",
       },
     ],
     company: [
       { name: t`Roadmap`, href: "/kan/roadmap" },
-      { name: t`GitHub`, href: "https://github.com/kanbn/kan" },
-      { name: t`Contact`, href: "mailto:support@kan.bn" },
+      { name: t`GitHub`, href: "https://github.com/opscape/kan" },
+      { name: t`Contact`, href: "mailto:support@opscape.com" },
       { name: t`OSS Friends`, href: "/oss-friends" },
     ],
     legal: [
@@ -43,12 +46,12 @@ const Footer = () => {
       { name: t`Privacy policy`, href: "/privacy" },
       {
         name: t`License`,
-        href: "https://github.com/kanbn/kan?tab=AGPL-3.0-1-ov-file#readme",
+        href: "https://github.com/opscape/kan?tab=AGPL-3.0-1-ov-file#readme",
       },
     ],
     resources: [
       { name: t`Features`, href: "/#features" },
-      { name: t`Pricing`, href: "/#pricing" },
+      { name: t`Pricing`, href: "/pricing" },
       { name: t`FAQs`, href: "/#faq" },
     ],
   };
@@ -59,10 +62,10 @@ const Footer = () => {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div>
             <div className="mb-2 flex items-center gap-2">
-              <Link href="https://github.com/kanbn/kan" target="_blank">
+              <Link href="https://github.com/opscape/kan" target="_blank">
                 <FaGithub className="h-8 w-8 rounded-lg border border-light-300 p-1.5 text-light-1000 hover:bg-light-100 dark:border-dark-300 dark:text-dark-1000 dark:hover:bg-dark-100" />
               </Link>
-              <Link href="https://discord.gg/e6ejRb6CmT" target="_blank">
+              <Link href="https://discord.gg/3Bm82XdFtg" target="_blank">
                 <FaDiscord className="h-8 w-8 rounded-lg border border-light-300 p-1.5 text-light-1000 hover:bg-light-100 dark:border-dark-300 dark:text-dark-1000 dark:hover:bg-dark-100" />
               </Link>
             </div>

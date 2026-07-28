@@ -1,10 +1,10 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "kan.bn",
+  "name": "opscape",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg",
-    "href": "https://kan.bn"
+    "href": "https://opscape.com"
   },
   "favicon": "./favicon.png",
   "colors": {
@@ -19,24 +19,24 @@
   "topbarLinks": [
     {
       "name": "Sign in",
-      "url": "https://kan.bn/login"
+      "url": "https://opscape.com/login"
     }
   ],
   "topbarCtaButton": {
     "name": "Go to app",
-    "url": "https://kan.bn/boards"
+    "url": "https://opscape.com/boards"
   },
   "anchors": [
     {
       "name": "API Reference",
-      "openapi": "https://kan.bn/api/v1/openapi.json",
+      "openapi": "https://opscape.com/api/v1/openapi.json",
       "url": "api-reference",
       "icon": "square-terminal"
     },
     {
       "name": "GitHub",
       "icon": "github",
-      "url": "https://github.com/kanbn"
+      "url": "https://github.com/opscape"
     }
   ],
   "navigation": [
@@ -66,7 +66,7 @@
     }
   ],
   "footerSocials": {
-    "discord": "https://discord.gg/e6ejRb6CmT",
-    "github": "https://github.com/kanbn"
+    "discord": "https://discord.gg/3Bm82XdFtg",
+    "github": "https://github.com/opscape"
   }
 }

@@ -154,11 +154,11 @@
     "translation": "14 Tage kostenlose Testversion · Jederzeit Plan wechseln oder kündigen"
   },
   "4obmDr": {
-    "message": "404 - Page Not Found | kan.bn",
+    "message": "404 - Page Not Found | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [["src/pages/404.tsx", 11]],
-    "translation": "404 - Seite nicht gefunden | kan.bn"
+    "translation": "404 - Seite nicht gefunden | Opscape"
   },
   "/rn4RE": {
     "message": "A powerful, flexible kanban app that helps you organise work, track progress, and deliver results—all in one place.",
@@ -200,11 +200,11 @@
     "translation": "Aktionen"
   },
   "JEt3q7": {
-    "message": "Activate | kan.bn",
+    "message": "Activate | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [["src/pages/partner/activate.tsx", 46]],
-    "translation": "Aktivieren | kan.bn"
+    "translation": "Aktivieren | Opscape"
   },
   "mkehy7": {
     "message": "Activate your account",
@@ -3694,11 +3694,11 @@
     "translation": "Workspace beitreten"
   },
   "A23Y7X": {
-    "message": "Join workspace | kan.bn",
+    "message": "Join workspace | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [["src/views/invite/index.tsx", 102]],
-    "translation": "Workspace beitreten | kan.bn"
+    "translation": "Workspace beitreten | Opscape"
   },
   "wM8xd8": {
     "message": "Junior",
@@ -3933,11 +3933,11 @@
     "translation": "Wird geladen ..."
   },
   "N/bcWA": {
-    "message": "Login | kan.bn",
+    "message": "Login | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [["src/views/auth/login/index.tsx", 33]],
-    "translation": "Anmelden | kan.bn"
+    "translation": "Anmelden | Opscape"
   },
   "nOhz3x": {
     "message": "Logout",
@@ -5602,14 +5602,14 @@
     "translation": "Registrieren"
   },
   "sUZo7y": {
-    "message": "Sign up | kan.bn",
+    "message": "Sign up | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [
       ["src/views/auth/signup/index.tsx", 36],
       ["src/views/auth/signup/index.tsx", 61]
     ],
-    "translation": "Registrieren | kan.bn"
+    "translation": "Registrieren | Opscape"
   },
   "WRkpB1": {
     "message": "Sign up disabled",
@@ -7388,19 +7388,19 @@
     "translation": "Sie können diese später jederzeit in den Einstellungen ändern."
   },
   "aelko+": {
-    "message": "You can get a custom workspace URL, like <0>kan.bn/kan</0>, by going into your <1>workspace settings</1> and purchasing a pro workspace subscription. All subscriptions help fund the development of the project!",
+    "message": "You can get a custom workspace URL, like <0>Opscape/kan</0>, by going into your <1>workspace settings</1> and purchasing a pro workspace subscription. All subscriptions help fund the development of the project!",
     "placeholders": {},
     "comments": [],
     "origin": [["src/views/home/components/Faqs.tsx", 67]],
-    "translation": "Sie können eine benutzerdefinierte Workspace-URL wie <0>kan.bn/kan</0> erhalten, indem Sie in Ihre <1>Workspace-Einstellungen</1> gehen und ein Pro-Workspace-Abonnement erwerben. Alle Abonnements helfen bei der Finanzierung der Projektentwicklung!",
+    "translation": "Sie können eine benutzerdefinierte Workspace-URL wie <0>Opscape/kan</0> erhalten, indem Sie in Ihre <1>Workspace-Einstellungen</1> gehen und ein Pro-Workspace-Abonnement erwerben. Alle Abonnements helfen bei der Finanzierung der Projektentwicklung!",
     "obsolete": true
   },
   "oRGf3Q": {
-    "message": "You can get a custom workspace URL, like <0>kan.bn/kan</0>, by going into your <1>workspace settings</1> and upgrading to a Team workspace subscription. All subscriptions help fund the development of the project!",
+    "message": "You can get a custom workspace URL, like <0>Opscape/kan</0>, by going into your <1>workspace settings</1> and upgrading to a Team workspace subscription. All subscriptions help fund the development of the project!",
     "placeholders": {},
     "comments": [],
     "origin": [["src/views/home/components/Faqs.tsx", 67]],
-    "translation": "Sie können eine benutzerdefinierte Arbeitsbereichs-URL wie <0>kan.bn/kan</0> erhalten, indem Sie in Ihre <1>Arbeitsbereichseinstellungen</1> gehen und auf ein Team-Arbeitsbereich-Abonnement upgraden. Alle Abonnements unterstützen die Entwicklung des Projekts!"
+    "translation": "Sie können eine benutzerdefinierte Arbeitsbereichs-URL wie <0>Opscape/kan</0> erhalten, indem Sie in Ihre <1>Arbeitsbereichseinstellungen</1> gehen und auf ein Team-Arbeitsbereich-Abonnement upgraden. Alle Abonnements unterstützen die Entwicklung des Projekts!"
   },
   "kSxwQL": {
     "message": "You can invite team members by clicking the \"Invite\" button in the top right corner of the <0>members page</0> and entering their email address. They will receive an email with a link to join the workspace.",
@@ -7486,11 +7486,11 @@
     "translation": "Sie haben sich ohne Passwort angemeldet. Legen Sie ein Passwort fest, um die passwortbasierte Anmeldung zu aktivieren."
   },
   "2SePRT": {
-    "message": "You've been invited to join a workspace on kan.bn.",
+    "message": "You've been invited to join a workspace on Opscape.",
     "placeholders": {},
     "comments": [],
     "origin": [["src/views/invite/index.tsx", 145]],
-    "translation": "Sie wurden eingeladen, einem Workspace auf kan.bn beizutreten."
+    "translation": "Sie wurden eingeladen, einem Workspace auf Opscape beizutreten."
   },
   "uOqaMC": {
     "message": "You've been invited to join a workspace.",

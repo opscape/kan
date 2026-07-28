@@ -31,7 +31,7 @@ export default function PricingView() {
   return (
     <Layout>
       <PageHead
-        title={`${t`Pricing`} | kan.bn`}
+        title={`${t`Pricing`} | Opscape`}
         description={t`Simple, transparent pricing. Start free with unlimited boards and cards, upgrade as your team grows. No hidden fees, no contracts.`}
       />
 

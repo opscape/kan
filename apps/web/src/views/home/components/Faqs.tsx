@@ -50,7 +50,7 @@ const Faqs = () => {
             Importing your Trello boards into Kan is easy. You can follow our
             step-by-step guide{" "}
             <Link
-              href="https://docs.kan.bn/imports/trello"
+              href="https://docs.opscape.com/imports/trello"
               className="underline"
             >
               here
@@ -66,11 +66,11 @@ const Faqs = () => {
         <Text>
           <Trans>
             You can get a custom workspace URL, like{" "}
-            <Link href="https://kan.bn/kan" className="underline">
-              kan.bn/kan
+            <Link href="https://opscape.com/kan" className="underline">
+              opscape.com/kan
             </Link>
             , by going into your{" "}
-            <Link href="https://kan.bn/settings" className="underline">
+            <Link href="https://opscape.com/settings" className="underline">
               workspace settings
             </Link>{" "}
             and upgrading to a Team workspace subscription. All subscriptions
@@ -111,7 +111,7 @@ const Faqs = () => {
           <Trans>
             You can invite team members by clicking the "Invite" button in the
             top right corner of the{" "}
-            <Link href="https://kan.bn/members" className="underline">
+            <Link href="https://opscape.com/members" className="underline">
               members page
             </Link>{" "}
             and entering their email address. They will receive an email with a
@@ -126,7 +126,7 @@ const Faqs = () => {
         <Text>
           <Trans>
             You can self-host by following the instructions in our{" "}
-            <Link href="https://github.com/kanbn/kan" className="underline">
+            <Link href="https://github.com/opscape/kan" className="underline">
               repo
             </Link>
             .
@@ -150,7 +150,7 @@ const Faqs = () => {
           <Trans>
             Find answers to common questions about Kan. Can't find what you're
             looking for? Feel free to{" "}
-            <Link href="mailto:support@kan.bn" className="underline">
+            <Link href="mailto:support@opscape.com" className="underline">
               contact us
             </Link>
             .

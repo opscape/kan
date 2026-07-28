@@ -48,7 +48,7 @@ const Cta = ({ theme }: { theme: string }) => {
                 : "-translate-y-4 opacity-0"
             }`}
           >
-            <p>kan.bn/{currentWorkspaceSlug}</p>
+            <p>opscape.com/{currentWorkspaceSlug}</p>
           </div>
           <h2 className="text-4xl font-bold tracking-tight text-balance text-light-1000 sm:text-4xl dark:text-dark-1000">
             {t`Get started for free today`}

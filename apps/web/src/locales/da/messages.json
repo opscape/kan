@@ -359,7 +359,7 @@
     "translation": ""
   },
   "4obmDr": {
-    "message": "404 - Page Not Found | kan.bn",
+    "message": "404 - Page Not Found | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -368,7 +368,7 @@
         11
       ]
     ],
-    "translation": "404 - Siden blev ikke fundet | kan.bn"
+    "translation": "404 - Siden blev ikke fundet | Opscape"
   },
   "_rn4RE": {
     "message": "A powerful, flexible kanban app that helps you organise work, track progress, and deliver results—all in one place.",
@@ -431,7 +431,7 @@
     "translation": "Handlinger"
   },
   "JEt3q7": {
-    "message": "Activate | kan.bn",
+    "message": "Activate | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -440,7 +440,7 @@
         46
       ]
     ],
-    "translation": "Aktivér | kan.bn",
+    "translation": "Aktivér | Opscape",
     "obsolete": true
   },
   "mkehy7": {
@@ -6563,7 +6563,7 @@
     "translation": "Deltag i arbejdsområde"
   },
   "A23Y7X": {
-    "message": "Join workspace | kan.bn",
+    "message": "Join workspace | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -6572,7 +6572,7 @@
         18
       ]
     ],
-    "translation": "Deltag i arbejdsområde | kan.bn"
+    "translation": "Deltag i arbejdsområde | Opscape"
   },
   "wM8xd8": {
     "message": "Junior",
@@ -6982,7 +6982,7 @@
     "translation": "Indlæser..."
   },
   "N_bcWA": {
-    "message": "Login | kan.bn",
+    "message": "Login | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -6991,7 +6991,7 @@
         33
       ]
     ],
-    "translation": "Login | kan.bn"
+    "translation": "Login | Opscape"
   },
   "nOhz3x": {
     "message": "Logout",
@@ -10229,7 +10229,7 @@
     "translation": "Opret konto"
   },
   "sUZo7y": {
-    "message": "Sign up | kan.bn",
+    "message": "Sign up | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -10242,7 +10242,7 @@
         61
       ]
     ],
-    "translation": "Opret konto | kan.bn"
+    "translation": "Opret konto | Opscape"
   },
   "WRkpB1": {
     "message": "Sign up disabled",
@@ -13314,7 +13314,7 @@
     "translation": "Du kan altid ændre dette senere under indstillinger."
   },
   "aelko-": {
-    "message": "You can get a custom workspace URL, like <0>kan.bn/kan</0>, by going into your <1>workspace settings</1> and purchasing a pro workspace subscription. All subscriptions help fund the development of the project!",
+    "message": "You can get a custom workspace URL, like <0>opscape.com/kan</0>, by going into your <1>workspace settings</1> and purchasing a pro workspace subscription. All subscriptions help fund the development of the project!",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -13323,11 +13323,11 @@
         67
       ]
     ],
-    "translation": "Du kan få en brugerdefineret URL til arbejdsområdet, f.eks. <0>kan.bn/kan</0>, ved at gå til <1>indstillingerne for arbejdsområdet</1> og købe et Pro-abonnement til arbejdsområdet. Alle abonnementer er med til at finansiere udviklingen af projektet!",
+    "translation": "Du kan få en brugerdefineret URL til arbejdsområdet, f.eks. <0>opscape.com/kan</0>, ved at gå til <1>indstillingerne for arbejdsområdet</1> og købe et Pro-abonnement til arbejdsområdet. Alle abonnementer er med til at finansiere udviklingen af projektet!",
     "obsolete": true
   },
   "oRGf3Q": {
-    "message": "You can get a custom workspace URL, like <0>kan.bn/kan</0>, by going into your <1>workspace settings</1> and upgrading to a Team workspace subscription. All subscriptions help fund the development of the project!",
+    "message": "You can get a custom workspace URL, like <0>opscape.com/kan</0>, by going into your <1>workspace settings</1> and upgrading to a Team workspace subscription. All subscriptions help fund the development of the project!",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -13471,7 +13471,7 @@
     "translation": ""
   },
   "2SePRT": {
-    "message": "You've been invited to join a workspace on kan.bn.",
+    "message": "You've been invited to join a workspace on opscape.com.",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -13480,7 +13480,7 @@
         147
       ]
     ],
-    "translation": "Du er blevet inviteret til at deltage i et arbejdsområde på kan.bn."
+    "translation": "Du er blevet inviteret til at deltage i et arbejdsområde på opscape.com."
   },
   "uOqaMC": {
     "message": "You've been invited to join a workspace.",

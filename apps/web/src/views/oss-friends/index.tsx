@@ -18,7 +18,7 @@ export default function OSSFriendsView({
 }) {
   return (
     <Layout>
-      <PageHead title={`${t`OSS Friends`} | kan.bn`} />
+      <PageHead title={`${t`OSS Friends`} | Opscape`} />
 
       <div className="flex h-full w-full flex-col lg:pt-20">
         <div className="w-full pt-32 pb-10">

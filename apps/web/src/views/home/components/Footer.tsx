@@ -6,7 +6,7 @@ import { LanguageSelector } from "~/components/LanguageSelector";
 
 const StatusMarker = () => (
   <Link
-    href="https://kan.openstatus.dev"
+    href="https://opscape.openstatus.dev"
     target="_blank"
     rel="noopener noreferrer"
     className="flex w-fit items-center gap-1.5 rounded-full border border-light-300 py-2 pl-3 pr-4 text-xs text-light-950 hover:bg-light-100 dark:border-dark-300 dark:text-dark-800 dark:hover:bg-dark-100"
@@ -46,7 +46,7 @@ const Footer = () => {
       { name: t`Privacy policy`, href: "/privacy" },
       {
         name: t`License`,
-        href: "https://github.com/opscape/kan?tab=AGPL-3.0-1-ov-file#readme",
+        href: "https://github.com/opscape/kan?tab=License-1-ov-file#readme",
       },
     ],
     resources: [

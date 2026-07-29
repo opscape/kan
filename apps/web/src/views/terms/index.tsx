@@ -26,7 +26,7 @@ export default function TermsView() {
     </li>
   );
 
-  const NAME = "Open Engineering";
+  const NAME = "Opscape";
   const DOMAIN = "https://opscape.com";
   const PRIVACY_URL = `${DOMAIN}/privacy`;
   const CONTACT_EMAIL = "support@opscape.com";

@@ -6,6 +6,8 @@ import type { AppProps, AppType } from "next/app";
 import type { ReactElement, ReactNode } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Head from "next/head";
+import Script from "next/script";
 import { ThemeProvider } from "next-themes";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
@@ -27,6 +29,15 @@ const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const metadata = {
+  title: "Kan",
+  description: "The open source Trello alternative",
+  icons: [
+    { rel: "icon", url: "/logo.svg", type: "image/svg+xml" },
+    { rel: "icon", url: "/favicon.ico" },
+  ],
+};
 
 export type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -57,6 +68,11 @@ const MyApp: AppType = ({ Component, pageProps }: AppPropsWithLayout) => {
 
   return (
     <>
+      <Head>
+        {metadata.icons.map((icon) => (
+          <link key={icon.url} {...icon} />
+        ))}
+      </Head>
       <style jsx global>{`
         html {
           --font-jakarta: ${jakarta.style.fontFamily};

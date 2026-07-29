@@ -7,7 +7,7 @@ import type { dbClient } from "@kan/db/client";
 import * as memberRepo from "@kan/db/repository/member.repo";
 import { createSubscriber, triggerSubscriberWorkflow } from "@kan/email";
 import { createLogger } from "@kan/logger";
-import { createS3Client } from "@kan/shared";
+import { createS3Client, getAvatarUrl } from "@kan/shared";
 
 import { downloadImage } from "./utils";
 
@@ -128,9 +128,7 @@ export function createDatabaseHooks(db: dbClient) {
           const lastName = rest.length ? rest.join(" ") : undefined;
 
           try {
-            const avatarUrl = avatarKey
-              ? `${env("NEXT_PUBLIC_STORAGE_URL")}/${env("NEXT_PUBLIC_AVATAR_BUCKET_NAME")}/${avatarKey}`
-              : undefined;
+            const avatarUrl = getAvatarUrl(avatarKey) ?? undefined;
 
             await createSubscriber({
               publicId: user.id,

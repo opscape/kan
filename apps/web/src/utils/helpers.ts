@@ -1,4 +1,5 @@
 import { env } from "next-runtime-env";
+import { getAvatarUrl as getSharedAvatarUrl } from "@kan/shared";
 
 export const formatToArray = (
   value: string | string[] | undefined,
@@ -46,27 +47,5 @@ export const formatMemberDisplayName = (
 };
 
 export const getAvatarUrl = (imageOrKey: string | null) => {
-  if (!imageOrKey) return "";
-
-  if (imageOrKey.startsWith("http://") || imageOrKey.startsWith("https://")) {
-    return imageOrKey;
-  }
-
-  // Construct URL from S3 key
-  const useVirtualHosted = env("NEXT_PUBLIC_USE_VIRTUAL_HOSTED_URLS") === "true";
-  const storageDomain = env("NEXT_PUBLIC_STORAGE_DOMAIN");
-  const storageUrl = env("NEXT_PUBLIC_STORAGE_URL");
-  const bucket = env("NEXT_PUBLIC_AVATAR_BUCKET_NAME");
-
-  if (useVirtualHosted && storageDomain && bucket) {
-    // Virtual-hosted style: https://{bucket}.{domain}/{key}
-    return `https://${bucket}.${storageDomain}/${imageOrKey}`;
-  }
-
-  if (storageUrl && bucket) {
-    // Path-style: {storageUrl}/{bucket}/{key}
-    return `${storageUrl}/${bucket}/${imageOrKey}`;
-  }
-
-  return "";
+  return getSharedAvatarUrl(imageOrKey) ?? "";
 };

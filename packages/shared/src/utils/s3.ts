@@ -76,6 +76,46 @@ export async function deleteObject(bucket: string, key: string) {
 }
 
 /**
+ * Resolve an avatar key to its public URL.
+ * Returns an absolute URL unchanged to support externally hosted provider avatars.
+ */
+export function getAvatarUrl(
+  imageOrKey: string | null | undefined,
+): string | null {
+  if (!imageOrKey) {
+    return null;
+  }
+
+  if (
+    imageOrKey.startsWith("http://") ||
+    imageOrKey.startsWith("https://")
+  ) {
+    return imageOrKey;
+  }
+
+  const avatarUrl = env("NEXT_PUBLIC_AVATAR_URL")?.replace(/\/$/, "");
+  if (avatarUrl) {
+    return `${avatarUrl}/${imageOrKey}`;
+  }
+
+  const useVirtualHosted =
+    env("NEXT_PUBLIC_USE_VIRTUAL_HOSTED_URLS") === "true";
+  const storageDomain = env("NEXT_PUBLIC_STORAGE_DOMAIN");
+  const storageUrl = env("NEXT_PUBLIC_STORAGE_URL");
+  const bucket = env("NEXT_PUBLIC_AVATAR_BUCKET_NAME");
+
+  if (useVirtualHosted && storageDomain && bucket) {
+    return `https://${bucket}.${storageDomain}/${imageOrKey}`;
+  }
+
+  if (storageUrl && bucket) {
+    return `${storageUrl}/${bucket}/${imageOrKey}`;
+  }
+
+  return null;
+}
+
+/**
  * Generate presigned URL for an avatar image
  * Returns the URL as-is if it's already a full URL (external provider)
  * Returns presigned URL if it's an S3 key

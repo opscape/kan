@@ -34,6 +34,18 @@ describe("getAvatarUrl", () => {
     );
   });
 
+  it("uses the configured avatar CDN URL for an S3 key", () => {
+    mockEnv.mockImplementation((key: string) =>
+      key === "NEXT_PUBLIC_AVATAR_URL"
+        ? "https://avatars.example.com/"
+        : undefined,
+    );
+
+    expect(getAvatarUrl("user123/avatar.jpg")).toBe(
+      "https://avatars.example.com/user123/avatar.jpg",
+    );
+  });
+
   describe("path-style URLs (MinIO/LocalStack)", () => {
     it("constructs path-style URL when STORAGE_DOMAIN is not set", () => {
       mockEnv.mockImplementation((key: string) => {

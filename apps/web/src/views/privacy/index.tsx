@@ -26,7 +26,7 @@ export default function PrivacyView() {
     </li>
   );
 
-  const NAME = "Open Engineering";
+  const NAME = "Opscape";
 
   return (
     <Layout>

@@ -28,6 +28,7 @@ export const PageHead = ({
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
       <link rel="manifest" href="/manifest.json" />
+      <link rel="apple-touch-icon" href="/icon.png" />
       <meta name="description" content={description} />
       {baseUrl && <link rel="canonical" href={canonicalUrl} />}
       <meta property="og:type" content="website" />

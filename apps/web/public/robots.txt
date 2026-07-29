@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /api/
+Disallow: /boards/
+Disallow: /cards/
+Disallow: /invite/
+Disallow: /login
+Disallow: /onboarding/
+Disallow: /partner/
+Disallow: /settings/
+Disallow: /signup
+Disallow: /templates/
+Disallow: /unsubscribe/
+Disallow: /upgrade/

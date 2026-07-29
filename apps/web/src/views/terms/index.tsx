@@ -10,7 +10,7 @@ import { PageHead } from "~/components/PageHead";
 import Layout from "../home/components/Layout";
 
 export default function TermsView() {
-  const NAME = "Open Engineering";
+  const NAME = "Opscape";
   const DOMAIN = "https://opscape.com";
   const PRIVACY_URL = `${DOMAIN}/privacy`;
   const CONTACT_EMAIL = "support@opscape.com";

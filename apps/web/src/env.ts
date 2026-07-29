@@ -45,6 +45,7 @@ export const env = createEnv({
     NEXT_PUBLIC_BASE_URL: z.string().url().optional(),
     NEXT_PUBLIC_API_BASE_URL: z.string().url().optional(),
     NEXT_PUBLIC_STORAGE_URL: z.string().url().optional(),
+    NEXT_PUBLIC_AVATAR_URL: z.string().url().optional(),
     NEXT_PUBLIC_AVATAR_BUCKET_NAME: z.string().optional(),
     NEXT_PUBLIC_ATTACHMENTS_BUCKET_NAME: z.string().optional(),
     NEXT_PUBLIC_STORAGE_DOMAIN: z.string().optional(),
@@ -90,6 +91,7 @@ export const env = createEnv({
     NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
     NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
     NEXT_PUBLIC_STORAGE_URL: process.env.NEXT_PUBLIC_STORAGE_URL,
+    NEXT_PUBLIC_AVATAR_URL: process.env.NEXT_PUBLIC_AVATAR_URL,
     NEXT_PUBLIC_AVATAR_BUCKET_NAME: process.env.NEXT_PUBLIC_AVATAR_BUCKET_NAME,
     NEXT_PUBLIC_ATTACHMENTS_BUCKET_NAME:
       process.env.NEXT_PUBLIC_ATTACHMENTS_BUCKET_NAME,

@@ -10,7 +10,7 @@ import { PageHead } from "~/components/PageHead";
 import Layout from "../home/components/Layout";
 
 export default function PrivacyView() {
-  const NAME = "Open Engineering";
+  const NAME = "Opscape";
 
   return (
     <Layout>

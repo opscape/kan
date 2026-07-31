@@ -20,7 +20,7 @@ export default function HomeView() {
         <div className="w-full pb-10 pt-32 lg:py-32">
           <div className="my-10 flex h-full w-full animate-fade-down flex-col items-center justify-center px-4">
             <p className="mt-2 text-center text-4xl font-bold text-light-1000 dark:text-dark-1000 lg:text-5xl">
-              Opscape Kan
+              Opscape <br /> <span className="text-3xl lg:text-4xl">Kan</span>
             </p>
 
             <p className="text-md mt-3 max-w-[450px] text-center text-light-950 dark:text-dark-900 lg:max-w-[600px] lg:text-lg">

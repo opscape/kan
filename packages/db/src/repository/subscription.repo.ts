@@ -1,4 +1,4 @@
-import { and, asc, eq, inArray, isNotNull, isNull } from "drizzle-orm";
+import { and, asc, desc, eq, inArray, isNotNull, isNull } from "drizzle-orm";
 
 import type { dbClient } from "@kan/db/client";
 import { subscription } from "@kan/db/schema";
@@ -97,6 +97,20 @@ export const getByStripeSubscriptionId = async (
 export const getByReferenceId = async (db: dbClient, referenceId: string) => {
   return await db.query.subscription.findMany({
     where: eq(subscription.referenceId, referenceId),
+  });
+};
+
+export const getLatestIncompleteByReferenceId = async (
+  db: dbClient,
+  referenceId: string,
+) => {
+  return await db.query.subscription.findFirst({
+    where: and(
+      eq(subscription.referenceId, referenceId),
+      eq(subscription.status, "incomplete"),
+      isNull(subscription.stripeSubscriptionId),
+    ),
+    orderBy: [desc(subscription.updatedAt)],
   });
 };
 

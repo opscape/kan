@@ -47,7 +47,7 @@
       {
         "group": "API reference",
         "pages": ["api-reference/introduction"],
-        "openapi": "https://kan.bn/api/v1/openapi.json"
+        "openapi": "https://opscape.com/api/v1/openapi.json"
       },
       {
         "group": "Self-hosting",
@@ -63,7 +63,7 @@
     "links": [
       {
         "label": "GitHub",
-        "href": "https://github.com/kanbn/kan"
+        "href": "https://github.com/opscape/kan"
       }
     ],
     "primary": {

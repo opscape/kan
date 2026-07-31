@@ -102,13 +102,23 @@ export default withRateLimit(
         return res.status(403).json({ error: "Unauthorized" });
       }
 
-      const subscription = await subscriptionRepo.create(db, {
-        plan: plan,
-        referenceId: workspacePublicId,
-        userId: user.id,
-        stripeCustomerId: user.stripeCustomerId ?? "",
-        status: "incomplete",
-      });
+      const incompleteSubscription =
+        await subscriptionRepo.getLatestIncompleteByReferenceId(
+          db,
+          workspacePublicId,
+        );
+
+      const subscription = incompleteSubscription
+        ? await subscriptionRepo.updateById(db, incompleteSubscription.id, {
+            plan,
+          })
+        : await subscriptionRepo.create(db, {
+            plan,
+            referenceId: workspacePublicId,
+            userId: user.id,
+            stripeCustomerId: user.stripeCustomerId ?? "",
+            status: "incomplete",
+          });
 
       subscriptionId = subscription?.id;
 

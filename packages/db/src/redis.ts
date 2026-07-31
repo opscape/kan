@@ -14,7 +14,8 @@ export function getRedisClient(): Redis | null {
   }
 
   redisClient = new Redis(redisUrl, {
-    maxRetriesPerRequest: 3,
+    connectTimeout: 5_000,
+    maxRetriesPerRequest: 1,
     enableReadyCheck: true,
     lazyConnect: true,
   });
@@ -22,10 +23,10 @@ export function getRedisClient(): Redis | null {
   return redisClient;
 }
 
+
 export async function closeRedisClient(): Promise<void> {
   if (redisClient) {
     await redisClient.quit();
     redisClient = null;
   }
 }
-

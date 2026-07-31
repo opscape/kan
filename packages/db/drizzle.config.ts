@@ -5,7 +5,7 @@ export default {
   out: "./migrations",
   dialect: "postgresql",
   dbCredentials: {
-    url: process.env.POSTGRES_URL ?? "",
+    url: process.env.DIRECT_URL ?? process.env.POSTGRES_URL ?? "",
     ssl: process.env.NODE_ENV === "production" ? true : false,
   },
   migrations: {

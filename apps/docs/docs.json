@@ -1,13 +1,13 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "opscape",
+  "name": "Opscape",
   "logo": {
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg",
     "href": "https://opscape.com"
   },
-  "favicon": "./favicon.png",
+  "favicon": "./logo.svg",
   "colors": {
     "primary": "#000000",
     "light": "#EDEDED",

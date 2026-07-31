@@ -18,6 +18,8 @@ export default function BillingSettings() {
   const isCloud = env("NEXT_PUBLIC_KAN_ENV") === "cloud";
   const { workspace } = useWorkspace();
 
+  const { data: user } = api.user.getUser.useQuery();
+
   const { data: workspaceData } = api.workspace.byId.useQuery(
     { workspacePublicId: workspace.publicId },
     { enabled: !!workspace.publicId && workspace.publicId.length >= 12 },
@@ -94,6 +96,7 @@ export default function BillingSettings() {
           variant="primary"
           iconRight={<HiMiniArrowTopRightOnSquare />}
           onClick={handleOpenBillingPortal}
+          disabled={!user?.stripeCustomerId}
         >
           {t`Billing portal`}
         </Button>

@@ -3,5 +3,13 @@ export async function downloadImage(url: string): Promise<Buffer> {
   if (!response.ok) {
     throw new Error(`Failed to download image: ${response.statusText}`);
   }
-  return Buffer.from(await response.arrayBuffer());
+
+  return {
+    buffer: Buffer.from(await response.arrayBuffer()),
+    contentType: response.headers
+      .get("content-type")
+      ?.split(";", 1)[0]
+      ?.trim()
+      .toLowerCase() ?? null,
+  };
 }

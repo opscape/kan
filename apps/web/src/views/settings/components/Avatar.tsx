@@ -162,8 +162,7 @@ export default function Avatar({
       setUploading(true);
       const blob = await getCroppedBlob();
 
-      const originalExt = selectedFile.name.split(".").pop() ?? "jpg";
-      const fileName = `${userId}/avatar-${generateUID()}.${originalExt}`;
+      const fileName = `${userId}/avatar-${generateUID()}`;
 
       const response = await uploadFile("/users/me/avatar", blob, fileName);
 

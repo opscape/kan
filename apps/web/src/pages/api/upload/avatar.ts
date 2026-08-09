@@ -5,7 +5,8 @@ import { createNextApiContext } from "@kan/api/trpc";
 import { withApiLogging } from "@kan/api/utils/apiLogging";
 import { withRateLimit } from "@kan/api/utils/rateLimit";
 import * as userRepo from "@kan/db/repository/user.repo";
-import { createS3Client } from "@kan/shared/utils";
+import { createLogger } from "@kan/logger";
+import { createS3Client, deleteObject } from "@kan/shared/utils";
 
 import { env } from "~/env";
 
@@ -14,6 +15,14 @@ const MAX_SIZE_BYTES = parseInt(
   10,
 ); // Default 2MB
 const allowedContentTypes = ["image/jpeg", "image/png", "image/webp"];
+const logger = createLogger("avatar-upload");
+
+function isStoredAvatarKey(
+  image: string | null | undefined,
+  userId: string,
+): image is string {
+  return Boolean(image && image.startsWith(`${userId}/`));
+}
 
 export const config = {
   api: {
@@ -78,6 +87,7 @@ export default withRateLimit(
         .replace(/[^a-zA-Z0-9._-]/g, "_")
         .substring(0, 200);
 
+      const previousAvatarKey = user.image;
       const s3Key = `${user.id}/${sanitizedFilename}`;
 
       const client = createS3Client();
@@ -93,10 +103,20 @@ export default withRateLimit(
         }),
       );
 
-      // Update user image in database
       const updatedUser = await userRepo.update(db, user.id, {
         image: s3Key,
       });
+
+      if (isStoredAvatarKey(previousAvatarKey, user.id)) {
+        try {
+          await deleteObject(bucket, previousAvatarKey);
+        } catch (error) {
+          logger.warn(
+            { err: error, userId: user.id, key: previousAvatarKey },
+            "Unable to delete replaced avatar",
+          );
+        }
+      }
 
       return res.status(200).json({
         key: s3Key,

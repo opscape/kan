@@ -12,6 +12,11 @@ import { createS3Client, getAvatarUrl } from "@kan/shared";
 import { downloadImage } from "./utils";
 
 const log = createLogger("auth");
+const allowedAvatarContentTypes = new Set([
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+]);
 
 type BetterAuthUserFields = {
   id?: string;
@@ -80,33 +85,20 @@ export function createDatabaseHooks(db: dbClient) {
           try {
             const userId = user.id ?? randomUUID();
             const client = createS3Client();
-            const dataImageMatch = user.image.match(
-              /^data:image\/(jpeg|png|webp);base64,/i,
+            const { buffer: imageBuffer, contentType } = await downloadImage(
+              user.image,
             );
-            const extensionFromUrl = user.image
-              .split(".")
-              .pop()
-              ?.split("?")[0]
-              ?.toLowerCase();
-            const extension =
-              dataImageMatch?.[1] ??
-              (extensionFromUrl === "jpg" ||
-              extensionFromUrl === "jpeg" ||
-              extensionFromUrl === "png" ||
-              extensionFromUrl === "webp"
-                ? extensionFromUrl
-                : "jpg");
-            const normalizedExtension =
-              extension === "jpg" ? "jpeg" : extension;
-            const key = `${userId}/avatar.${extension}`;
-            const imageBuffer = await downloadImage(user.image);
+            if (!contentType || !allowedAvatarContentTypes.has(contentType)) {
+              throw new Error("Unsupported provider avatar image type");
+            }
+            const key = `${userId}/avatar`;
 
             await client.send(
               new PutObjectCommand({
                 Bucket: env("NEXT_PUBLIC_AVATAR_BUCKET_NAME") ?? "",
                 Key: key,
                 Body: imageBuffer,
-                ContentType: `image/${normalizedExtension}`,
+                ContentType: contentType,
               }),
             );
 

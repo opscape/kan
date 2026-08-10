@@ -9,7 +9,7 @@ const StatusMarker = () => (
     href="https://opscape.openstatus.dev"
     target="_blank"
     rel="noopener noreferrer"
-    className="flex w-fit items-center gap-1.5 rounded-full border border-light-300 py-2 pl-3 pr-4 text-xs text-light-950 hover:bg-light-100 dark:border-dark-300 dark:text-dark-800 dark:hover:bg-dark-100"
+    className="flex w-fit items-center gap-1.5 rounded-full border border-light-300 py-2 pl-3 pr-4 text-xs text-light-950 hover:bg-light-100 dark:border-dark-300 dark:text-dark-950 dark:hover:bg-dark-100"
   >
     <span className="relative mr-1 h-2 w-2">
       <span className="absolute -inset-[1px] animate-[ping_1s_infinite] rounded-full bg-green-500/30"></span>
@@ -66,8 +66,15 @@ const Footer = () => {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div>
             <div className="mb-2 flex items-center gap-2">
-              <Link href="https://github.com/opscape/kan" target="_blank">
-                <FaGithub className="h-8 w-8 rounded-lg border border-light-300 p-1.5 text-light-1000 hover:bg-light-100 dark:border-dark-300 dark:text-dark-1000 dark:hover:bg-dark-100" />
+              <Link
+                href="https://github.com/opscape/kan"
+                target="_blank"
+                aria-label={t`GitHub`}
+              >
+                <FaGithub
+                  aria-hidden="true"
+                  className="h-8 w-8 rounded-lg border border-light-300 p-1.5 text-light-1000 hover:bg-light-100 dark:border-dark-300 dark:text-dark-1000 dark:hover:bg-dark-100"
+                />
               </Link>
             </div>
 
@@ -86,7 +93,7 @@ const Footer = () => {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm/6 text-light-900 hover:text-light-1000 dark:text-dark-950 dark:hover:text-dark-1000"
+                        className="text-sm/6 text-light-950 hover:text-light-1000 dark:text-dark-950 dark:hover:text-dark-1000"
                       >
                         {item.name}
                       </a>
@@ -103,7 +110,7 @@ const Footer = () => {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm/6 text-light-900 hover:text-light-1000 dark:text-dark-950 dark:hover:text-dark-1000"
+                        className="text-sm/6 text-light-950 hover:text-light-1000 dark:text-dark-950 dark:hover:text-dark-1000"
                       >
                         {item.name}
                       </a>
@@ -122,7 +129,7 @@ const Footer = () => {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm/6 text-light-900 hover:text-light-1000 dark:text-dark-950 dark:hover:text-dark-1000"
+                        className="text-sm/6 text-light-950 hover:text-light-1000 dark:text-dark-950 dark:hover:text-dark-1000"
                       >
                         {item.name}
                       </a>
@@ -139,7 +146,7 @@ const Footer = () => {
                     <li key={item.name}>
                       <a
                         href={item.href}
-                        className="text-sm/6 text-light-900 hover:text-light-1000 dark:text-dark-950 dark:hover:text-dark-1000"
+                        className="text-sm/6 text-light-950 hover:text-light-1000 dark:text-dark-950 dark:hover:text-dark-1000"
                       >
                         {item.name}
                       </a>

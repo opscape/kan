@@ -63,7 +63,7 @@ export default function Logos() {
   return (
     <div className="w-full px-4 py-16">
       <div className="mb-8 text-center">
-        <p className="text-sm font-medium text-light-800 dark:text-dark-800">
+        <p className="text-sm font-medium text-light-950 dark:text-dark-950">
           <Trans>
             Trusted by fast-moving teams
             <br />

@@ -67,6 +67,7 @@ const MyApp: AppType = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <>
       <Head>
+        <meta name="description" content={metadata.description} />
         {metadata.icons.map((icon) => (
           <link key={icon.url} {...icon} />
         ))}

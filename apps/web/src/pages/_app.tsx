@@ -1,7 +1,7 @@
 import "~/styles/globals.css";
 import "~/utils/i18n";
 
-import type { NextPage, Viewport } from "next";
+import type { NextPage } from "next";
 import type { AppProps, AppType } from "next/app";
 import type { ReactElement, ReactNode } from "react";
 import { Plus_Jakarta_Sans } from "next/font/google";
@@ -34,13 +34,6 @@ export const metadata = {
   ],
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-};
-
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
@@ -71,6 +64,7 @@ const MyApp: AppType = ({ Component, pageProps }: AppPropsWithLayout) => {
   return (
     <>
       <Head>
+        <meta name="description" content={metadata.description} />
         {metadata.icons.map((icon) => (
           <link key={icon.url} {...icon} />
         ))}
@@ -111,7 +105,11 @@ const MyApp: AppType = ({ Component, pageProps }: AppPropsWithLayout) => {
         <KeyboardShortcutProvider>
           <LinguiProviderWrapper>
             <FontSizeProvider>
-              <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+              >
                 <ModalProvider>
                   <PopupProvider>
                     {posthogKey ? (

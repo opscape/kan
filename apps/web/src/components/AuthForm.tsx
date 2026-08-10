@@ -38,19 +38,16 @@ import { usePopup } from "~/providers/popup";
 type AuthProvider = SocialProvider | "oidc";
 
 interface FormValues {
-  name?: string;
   email: string;
   password?: string;
 }
 
 interface AuthProps {
   setIsMagicLinkSent: (value: boolean, recipient: string) => void;
-  isSignUp?: boolean;
   callbackURL?: string;
 }
 
 const EmailSchema = z.object({
-  name: z.string().optional(),
   email: z.string().email(),
   password: z.string().optional(),
 });
@@ -155,7 +152,6 @@ const availableSocialProviders = {
 
 export function Auth({
   setIsMagicLinkSent,
-  isSignUp,
   callbackURL: callbackURLProp,
 }: AuthProps) {
   const [isCloudEnv, setIsCloudEnv] = useState(false);
@@ -201,54 +197,35 @@ export function Auth({
   const handleLoginWithEmail = async (
     email: string,
     password?: string | null,
-    name?: string,
   ) => {
     setIsLoginWithEmailPending(true);
     setLoginError(null);
     if (password) {
-      if (isSignUp && name) {
-        await authClient.signUp.email(
-          {
-            name,
-            email,
-            password,
-            callbackURL,
-          },
-          {
-            onSuccess: () =>
-              showPopup({
-                header: t`Success`,
-                message: t`You have been signed up successfully.`,
-                icon: "success",
-              }),
-            onError: ({ error }) => setLoginError(error.message),
-          },
-        );
-      } else {
-        await authClient.signIn.email(
-          {
-            email,
-            password,
-            callbackURL,
-          },
-          {
-            onSuccess: () =>
-              showPopup({
-                header: t`Success`,
-                message: t`You have been logged in successfully.`,
-                icon: "success",
-              }),
-            onError: ({ error }) => setLoginError(error.message),
-          },
-        );
-      }
+      await authClient.signIn.email(
+        {
+          email,
+          password,
+          callbackURL,
+        },
+        {
+          onSuccess: () =>
+            showPopup({
+              header: t`Success`,
+              message: t`You have been logged in successfully.`,
+              icon: "success",
+            }),
+          onError: ({ error }) => setLoginError(error.message),
+        },
+      );
     } else {
-      // Only allow magic link if email sending is enabled and not in sign up mode
-      if (isCloudEnv || (isEmailSendingEnabled && !isSignUp)) {
+      if (isCloudEnv || isEmailSendingEnabled) {
         await authClient.signIn.magicLink(
           {
             email,
             callbackURL,
+            newUserCallbackURL: `/onboarding/profile?returnUrl=${encodeURIComponent(
+              callbackURL,
+            )}`,
           },
           {
             onSuccess: () => setIsMagicLinkSent(true, email),
@@ -256,12 +233,7 @@ export function Auth({
           },
         );
       } else {
-        // Provide a clear error feedback when password omitted but magic link unavailable
-        setLoginError(
-          isSignUp
-            ? t`Password is required to sign up.`
-            : t`Password is required to login.`,
-        );
+        setLoginError(t`Password is required to login.`);
       }
     }
 
@@ -303,34 +275,19 @@ export function Auth({
     const sanitizedPassword = values.password?.trim()
       ? values.password
       : undefined;
-    await handleLoginWithEmail(values.email, sanitizedPassword, values.name);
+    await handleLoginWithEmail(values.email, sanitizedPassword);
   };
 
   const password = watch("password");
 
   const isMagicLinkAvailable = useMemo(() => {
-    return isCloudEnv || (isEmailSendingEnabled && !isSignUp);
-  }, [isCloudEnv, isEmailSendingEnabled, isSignUp]);
+    return isCloudEnv || isEmailSendingEnabled;
+  }, [isCloudEnv, isEmailSendingEnabled]);
 
-  // Determine if we should operate in magic link mode for current form state (login only)
-  const isMagicLinkMode = useMemo(() => {
-    // Magic link only viable when email sending enabled AND not sign up.
-    if (!isEmailSendingEnabled || isSignUp) return false;
-    // If credentials disabled we always default to magic link.
-    if (!isCredentialsEnabled) return true;
-    // Credentials enabled: user chooses magic link by leaving password blank.
-    return !password;
-  }, [isEmailSendingEnabled, isSignUp, isCredentialsEnabled, password]);
-
-  // Auto-focus password field when an error indicates it's required
   useEffect(() => {
     if (!isCredentialsEnabled) return;
-    // Focus when: sign up and missing password; login error requiring password; validation error on password.
-    const pwdEmpty = (password ?? "").length === 0;
     let needsPassword = false;
-    if (isSignUp && pwdEmpty) {
-      needsPassword = true;
-    } else if (loginError?.toLowerCase().includes("password")) {
+    if (loginError?.toLowerCase().includes("password")) {
       needsPassword = true;
     } else if (errors.password) {
       needsPassword = true;
@@ -338,7 +295,7 @@ export function Auth({
     if (needsPassword && passwordRef.current) {
       passwordRef.current.focus();
     }
-  }, [isSignUp, password, loginError, errors.password, isCredentialsEnabled]);
+  }, [password, loginError, errors.password, isCredentialsEnabled]);
 
   return (
     <div className="space-y-6">
@@ -388,19 +345,6 @@ export function Auth({
             </div>
           )}
           <div className="space-y-2">
-            {isSignUp && isCredentialsEnabled && (
-              <div>
-                <Input
-                  {...register("name", { required: true })}
-                  placeholder={t`Enter your name`}
-                />
-                {errors.name && (
-                  <p className="mt-2 text-xs text-red-400">
-                    {t`Please enter a valid name`}
-                  </p>
-                )}
-              </div>
-            )}
             <div>
               <Input
                 {...register("email", { required: true })}
@@ -439,8 +383,8 @@ export function Auth({
               size="lg"
               variant="secondary"
             >
-              {isSignUp ? t`Sign up with ` : t`Continue with `}
-              {isMagicLinkMode ? t`magic link` : t`email`}
+              {t`Continue with `}
+              {t`email`}
             </Button>
           </div>
         </form>

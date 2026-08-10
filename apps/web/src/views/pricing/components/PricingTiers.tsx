@@ -25,7 +25,7 @@ const Pricing = ({
     {
       name: t`Free`,
       id: "tier-free",
-      href: "signup",
+      href: "login",
       buttonText: t`Get started`,
       price: { monthly: t`$0`, annually: t`$0` },
       description: t`Free for everyone`,
@@ -46,7 +46,7 @@ const Pricing = ({
     {
       name: t`Teams`,
       id: "tier-teams",
-      href: "signup",
+      href: "login",
       buttonText: t`Get started`,
       price: { monthly: "$10", annually: "$8" },
       description: t`Perfect for small and growing teams looking to collaborate.`,

@@ -135,7 +135,7 @@ const Features = ({ theme }: { theme: "light" | "dark" }) => {
         <p className="mt-2 text-center text-3xl font-bold text-light-1000 lg:text-4xl dark:text-dark-1000">
           {t`Kanban reimagined`}
         </p>
-        <p className="text-md lg:text-md mt-3 max-w-[500px] text-center text-light-950 dark:text-dark-900">
+        <p className="text-md lg:text-md mt-3 max-w-[500px] text-center text-light-950 dark:text-dark-950">
           {t`Simple, visual task management that just works. Drag and drop cards, collaborate with your team, and get more done.`}
         </p>
         <div className="mx-auto mt-16 w-full max-w-7xl">
@@ -147,7 +147,7 @@ const Features = ({ theme }: { theme: "light" | "dark" }) => {
         </div>
 
         <div>
-          <div className="mt-8 flex items-center gap-2 rounded-full border bg-light-50 px-4 py-1 text-center text-sm text-light-1000 dark:border-dark-300 dark:bg-dark-50 dark:text-dark-900">
+          <div className="mt-8 flex items-center gap-2 rounded-full border bg-light-50 px-4 py-1 text-center text-sm text-light-1000 dark:border-dark-300 dark:bg-dark-50 dark:text-dark-950">
             <p className="text-xs lg:text-sm">
               {t`We're just getting started. `}
               <Link href="/kan/roadmap" className="underline">

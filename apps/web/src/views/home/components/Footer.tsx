@@ -66,8 +66,15 @@ const Footer = () => {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div>
             <div className="mb-2 flex items-center gap-2">
-              <Link href="https://github.com/opscape/kan" target="_blank">
-                <FaGithub className="h-8 w-8 rounded-lg border border-light-300 p-1.5 text-light-1000 hover:bg-light-100 dark:border-dark-300 dark:text-dark-1000 dark:hover:bg-dark-100" />
+              <Link
+                href="https://github.com/opscape/kan"
+                target="_blank"
+                aria-label={t`GitHub`}
+              >
+                <FaGithub
+                  aria-hidden="true"
+                  className="h-8 w-8 rounded-lg border border-light-300 p-1.5 text-light-1000 hover:bg-light-100 dark:border-dark-300 dark:text-dark-1000 dark:hover:bg-dark-100"
+                />
               </Link>
             </div>
 

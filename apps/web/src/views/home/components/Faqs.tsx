@@ -10,7 +10,7 @@ import { HiMiniMinusSmall, HiMiniPlusSmall } from "react-icons/hi2";
 
 const Text = ({ children }: { children: React.ReactNode }) => {
   return (
-    <p className="text-[14px] leading-[1.7rem] text-light-800 dark:text-dark-800">
+    <p className="text-[14px] leading-[1.7rem] text-light-950 dark:text-dark-950">
       {children}
     </p>
   );
@@ -146,7 +146,7 @@ const Faqs = () => {
         <p className="mt-2 text-center text-3xl font-bold text-light-1000 lg:text-4xl dark:text-dark-1000">
           {t`Questions?`}
         </p>
-        <p className="text lg:text-md mt-3 max-w-[500px] text-center text-light-950 dark:text-dark-900">
+        <p className="text lg:text-md mt-3 max-w-[500px] text-center text-light-950 dark:text-dark-950">
           <Trans>
             Find answers to common questions about Kan. Can't find what you're
             looking for? Feel free to{" "}
@@ -172,7 +172,7 @@ const Faqs = () => {
                       <span className="text-[14px] font-semibold">
                         {faq.question}
                       </span>
-                      <span className="ml-6 flex h-7 items-center text-light-800 dark:text-dark-800">
+                      <span className="ml-6 flex h-7 items-center text-light-950 dark:text-dark-950">
                         <HiMiniPlusSmall
                           aria-hidden="true"
                           className="size-6 group-data-open:hidden"

@@ -68,24 +68,24 @@ const TestimonialCard = ({
               href={testimonial.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="-mt-1 block text-sm text-light-800 transition-colors hover:text-light-900 dark:text-dark-800 dark:hover:text-dark-900"
+              className="-mt-1 block text-sm text-light-950 transition-colors hover:text-light-1000 dark:text-dark-950 dark:hover:text-dark-1000"
             >
               {testimonial.handle}
             </a>
           ) : (
-            <p className="-mt-0.5 block text-sm text-light-800 dark:text-dark-800">
+            <p className="-mt-0.5 block text-sm text-light-950 dark:text-dark-950">
               {testimonial.handle}
             </p>
           )}
           {testimonial.role && (
-            <p className="text-xs text-light-600 dark:text-dark-600">
+            <p className="text-xs text-light-950 dark:text-dark-950">
               {testimonial.role}
             </p>
           )}
         </div>
       </div>
 
-      <div className="mt-4 text-sm leading-relaxed text-light-950 dark:text-dark-900">
+      <div className="mt-4 text-sm leading-relaxed text-light-950 dark:text-dark-950">
         <p>{testimonial.text}</p>
       </div>
     </div>
@@ -235,7 +235,7 @@ const Testimonials = () => {
         <p className="mt-2 text-center text-3xl font-bold text-light-1000 lg:text-4xl dark:text-dark-1000">
           {t`Loved by teams worldwide`}
         </p>
-        <p className="text-md lg:text-md mt-3 max-w-[500px] text-center text-light-950 dark:text-dark-900">
+        <p className="text-md lg:text-md mt-3 max-w-[500px] text-center text-light-950 dark:text-dark-950">
           {t`See what our users are saying about Kan`}
         </p>
 

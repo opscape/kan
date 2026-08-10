@@ -1,3 +1,4 @@
+import { t } from "@lingui/core/macro";
 import { HiLanguage } from "react-icons/hi2";
 import { twMerge } from "tailwind-merge";
 
@@ -16,6 +17,9 @@ export function LanguageSelector({ compact = false }: { compact?: boolean }) {
           compact && "left-3 h-4 w-4",
         )}
       />
+      <label htmlFor="language-select" className="sr-only">
+        {t`Language`}
+      </label>
       <select
         id="language-select"
         value={locale}

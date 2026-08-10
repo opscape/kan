@@ -27,3 +27,15 @@ export const localeNames: Record<Locale, string> = {
   ptbr: "Português",
   da: "Dansk",
 };
+
+export const localeLanguageTags: Record<Locale, string> = {
+  en: "en",
+  fr: "fr",
+  de: "de",
+  es: "es",
+  it: "it",
+  nl: "nl",
+  ru: "ru",
+  pl: "pl",
+  ptbr: "pt-BR",
+};

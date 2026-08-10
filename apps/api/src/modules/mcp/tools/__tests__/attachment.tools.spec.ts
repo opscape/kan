@@ -7,7 +7,7 @@ import { AttachmentService } from "../../../attachment/attachment.service.js";
 import { AttachmentTools } from "../attachment.tools.js";
 
 const mockAttachmentService = { delete: vi.fn() };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let tools: AttachmentTools;
 

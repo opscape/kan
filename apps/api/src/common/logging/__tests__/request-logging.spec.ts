@@ -46,7 +46,7 @@ class FakeAuthGuard implements CanActivate {
   canActivate(context: ExecutionContext) {
     context.switchToHttp().getRequest<{ user?: unknown }>().user = {
       id: "user_1",
-      email: "henry@kan.bn",
+      email: "henry@opscape.com",
     };
     return true;
   }

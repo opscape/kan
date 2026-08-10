@@ -15,7 +15,7 @@ import { getApiErrorStatus } from "~/utils/apiError";
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <PageHead title={t`Join workspace | kan.bn`} />
+      <PageHead title={t`Join workspace | Opscape`} />
       {children}
     </>
   );
@@ -157,24 +157,14 @@ export default function InvitePage() {
                 {t`Go to app`}
               </Button>
             ) : (
-              <>
-                <Button
-                  href={`/login?next=/invite/${inviteCode}`}
-                  disabled={isProcessing}
-                  variant="primary"
-                  size="md"
-                >
-                  {t`Sign In`}
-                </Button>
-                <Button
-                  href={`/signup?next=/invite/${inviteCode}`}
-                  disabled={isProcessing}
-                  variant="primary"
-                  size="md"
-                >
-                  {t`Sign Up`}
-                </Button>
-              </>
+              <Button
+                href={`/login?next=/invite/${inviteCode}`}
+                disabled={isProcessing}
+                variant="primary"
+                size="md"
+              >
+                {t`Continue`}
+              </Button>
             )}
           </div>
         </div>

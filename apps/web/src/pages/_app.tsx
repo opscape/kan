@@ -4,6 +4,7 @@ import "~/utils/i18n";
 import type { NextPage } from "next";
 import type { AppProps, AppType } from "next/app";
 import type { ReactElement, ReactNode } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Head from "next/head";

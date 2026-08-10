@@ -20,7 +20,7 @@ function call(headers: Record<string, string>) {
 
 describe("AuthGuard", () => {
   it("attaches the user and allows the request when a session resolves", async () => {
-    const user = { id: "user_1", email: "henry@kan.bn" };
+    const user = { id: "user_1", email: "henry@opscape.com" };
     vi.mocked(resolveUserFromHeaders).mockResolvedValue({ user } as never);
 
     const { request, result } = call({ cookie: "session=abc" });

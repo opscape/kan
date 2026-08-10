@@ -51,4 +51,4 @@ export const workspaceMemberPublicId = memberPublicId;
 export const workspaceSlug = z
   .string()
   .min(1)
-  .describe("The workspace's URL slug, e.g. 'acme' in kan.bn/acme.");
+  .describe("The workspace's URL slug, e.g. 'acme' in opscape.com/acme.");

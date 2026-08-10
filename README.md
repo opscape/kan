@@ -124,10 +124,10 @@ Kan ships with a [Model Context Protocol](https://modelcontextprotocol.io) (MCP)
 Run it with `npx`, no clone or global install required:
 
 ```bash
-npx -y @kan.bn/mcp
+npx -y @opscape/mcp
 ```
 
-Configure it with two environment variables: `KAN_BASE_URL` (your Kan instance) and `KAN_API_TOKEN` (from **Settings → API Keys**). Then point your client's MCP config at the `npx -y @kan.bn/mcp` command.
+Configure it with two environment variables: `KAN_BASE_URL` (your Kan instance) and `KAN_API_TOKEN` (from **Settings → API Keys**). Then point your client's MCP config at the `npx -y @opscape/mcp` command.
 
 See the [MCP Server docs](https://docs.opscape.com/mcp) for per-client config (Claude Desktop, Codex, and others), example prompts, the full tool reference, and troubleshooting.
 

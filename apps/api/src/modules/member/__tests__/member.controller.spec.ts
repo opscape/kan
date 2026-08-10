@@ -19,7 +19,7 @@ const mockMemberService = {
   getInviteByCode: vi.fn(),
   acceptInviteLink: vi.fn(),
 };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 const fakeRequest = { headers: { cookie: "session=abc" } };
 
 let workspaceController: WorkspaceMemberController;
@@ -50,7 +50,7 @@ describe("WorkspaceMemberController", () => {
     const result = await workspaceController.invite(
       user as never,
       "workspace_12345",
-      { email: "new@kan.bn" },
+      { email: "new@opscape.com" },
       fakeRequest as never,
     );
 
@@ -60,7 +60,7 @@ describe("WorkspaceMemberController", () => {
     };
     expect(call).toMatchObject({
       workspacePublicId: "workspace_12345",
-      email: "new@kan.bn",
+      email: "new@opscape.com",
       userId: "user_1",
     });
     expect(call.headers).toBeInstanceOf(Headers);
@@ -126,7 +126,7 @@ describe("WorkspaceMemberController", () => {
     mockMemberService.createInviteLink.mockResolvedValue({
       publicId: "invite_1",
       inviteCode: "code123",
-      inviteLink: "https://kan.bn/invite/code123",
+      inviteLink: "https://opscape.com/invite/code123",
       expiresAt: null,
     });
 

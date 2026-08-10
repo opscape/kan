@@ -10,7 +10,7 @@ const mockUserService = {
   update: vi.fn(),
   setPassword: vi.fn(),
 };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let controller: UserController;
 

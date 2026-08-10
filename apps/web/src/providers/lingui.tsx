@@ -3,7 +3,7 @@ import { I18nProvider } from "@lingui/react";
 import { createContext, useContext, useEffect, useState } from "react";
 
 import type { Locale } from "~/locales";
-import { defaultLocale, locales } from "~/locales";
+import { defaultLocale, localeLanguageTags, locales } from "~/locales";
 import { activateLocale, i18n, initializeI18n } from "~/utils/i18n";
 
 interface LinguiContextType {
@@ -65,6 +65,10 @@ export function LinguiProviderWrapper({
     }
     setIsHydrated(true);
   }, [initialLocale]);
+
+  useEffect(() => {
+    document.documentElement.lang = localeLanguageTags[locale];
+  }, [locale]);
 
   useEffect(() => {
     if (isHydrated && locale !== defaultLocale) {

@@ -38,4 +38,5 @@ export const localeLanguageTags: Record<Locale, string> = {
   ru: "ru",
   pl: "pl",
   ptbr: "pt-BR",
+  da: "da",
 };

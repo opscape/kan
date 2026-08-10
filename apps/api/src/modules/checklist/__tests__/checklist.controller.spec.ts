@@ -16,7 +16,7 @@ const mockChecklistService = {
   updateItem: vi.fn(),
   deleteItem: vi.fn(),
 };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let cardChecklistController: CardChecklistController;
 let checklistController: ChecklistController;

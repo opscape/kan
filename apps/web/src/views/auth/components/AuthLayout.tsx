@@ -16,7 +16,7 @@ export function AuthLayout({
           href="/"
           className="mb-8 block text-center text-sm font-bold tracking-tight text-light-1000 dark:text-dark-1000"
         >
-          kan.bn
+          Opscape
         </Link>
         <h1 className="mb-8 text-center text-xl font-semibold tracking-tight text-light-1000 dark:text-dark-1000">
           {title}

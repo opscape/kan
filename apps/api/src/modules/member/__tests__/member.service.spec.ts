@@ -18,7 +18,7 @@ const workspace = {
   publicId: "workspace_12345",
   name: "Acme",
   slug: "acme",
-  members: [{ email: "existing@kan.bn" }],
+  members: [{ email: "existing@opscape.com" }],
 };
 
 const teamSubscription = {
@@ -65,7 +65,7 @@ describe("MemberService.invite", () => {
 
     const result = await service.invite({
       workspacePublicId: "workspace_12345",
-      email: "new@kan.bn",
+      email: "new@opscape.com",
       userId: "user_1",
       headers: new Headers(),
     });
@@ -82,7 +82,7 @@ describe("MemberService.invite", () => {
     await expect(
       service.invite({
         workspacePublicId: "workspace_12345",
-        email: "existing@kan.bn",
+        email: "existing@opscape.com",
         userId: "user_1",
         headers: new Headers(),
       }),
@@ -99,7 +99,7 @@ describe("MemberService.invite", () => {
     await expect(
       service.invite({
         workspacePublicId: "workspace_12345",
-        email: "new@kan.bn",
+        email: "new@opscape.com",
         userId: "user_1",
         headers: new Headers(),
       }),
@@ -122,7 +122,7 @@ describe("MemberService.invite", () => {
     await expect(
       service.invite({
         workspacePublicId: "workspace_12345",
-        email: "new@kan.bn",
+        email: "new@opscape.com",
         userId: "user_1",
         headers: new Headers(),
       }),
@@ -155,7 +155,7 @@ describe("MemberService.invite", () => {
 
     await service.invite({
       workspacePublicId: "workspace_12345",
-      email: "new@kan.bn",
+      email: "new@opscape.com",
       userId: "user_1",
       headers: new Headers(),
     });
@@ -183,7 +183,7 @@ describe("MemberService.invite", () => {
 
     await service.invite({
       workspacePublicId: "workspace_12345",
-      email: "new@kan.bn",
+      email: "new@opscape.com",
       userId: "user_1",
       headers: new Headers(),
     });
@@ -206,7 +206,7 @@ describe("MemberService.invite", () => {
     await expect(
       service.invite({
         workspacePublicId: "workspace_12345",
-        email: "new@kan.bn",
+        email: "new@opscape.com",
         userId: "user_1",
         headers: new Headers(),
       }),
@@ -235,7 +235,7 @@ describe("MemberService.invite", () => {
     await expect(
       service.invite({
         workspacePublicId: "workspace_12345",
-        email: "new@kan.bn",
+        email: "new@opscape.com",
         userId: "user_1",
         headers: new Headers(),
       }),
@@ -496,7 +496,7 @@ describe("MemberService.acceptInviteLink", () => {
     vi.spyOn(workspaceRepo, "isUserInWorkspace").mockResolvedValue(false);
     vi.spyOn(userRepo, "getById").mockResolvedValue({
       id: "user_1",
-      email: "user@kan.bn",
+      email: "user@opscape.com",
     } as never);
     vi.spyOn(permissionRepo, "getRoleByWorkspaceIdAndName").mockResolvedValue({
       id: 9,
@@ -530,7 +530,7 @@ describe("MemberService.acceptInviteLink", () => {
     vi.spyOn(workspaceRepo, "isUserInWorkspace").mockResolvedValue(false);
     vi.spyOn(userRepo, "getById").mockResolvedValue({
       id: "user_1",
-      email: "user@kan.bn",
+      email: "user@opscape.com",
     } as never);
     vi.spyOn(subscriptionRepo, "getByReferenceId").mockResolvedValue([
       { ...teamSubscription, partnerTier: 1 },

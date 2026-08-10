@@ -6082,7 +6082,7 @@
     "obsolete": true
   },
   "GbjlZL": {
-    "message": "Forgot password | kan.bn",
+    "message": "Forgot password | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -6091,7 +6091,7 @@
         58
       ]
     ],
-    "translation": "Forgot password | kan.bn"
+    "translation": "Forgot password | Opscape"
   },
   "UNMVei": {
     "message": "Forgot password?",
@@ -10388,7 +10388,7 @@
     "translation": "Reset password"
   },
   "S57AHL": {
-    "message": "Reset password | kan.bn",
+    "message": "Reset password | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -10397,7 +10397,7 @@
         79
       ]
     ],
-    "translation": "Reset password | kan.bn"
+    "translation": "Reset password | Opscape"
   },
   "e4hPSt": {
     "message": "Reset to role defaults",

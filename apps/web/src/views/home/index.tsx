@@ -2,6 +2,7 @@ import Image from "next/image";
 import { t } from "@lingui/core/macro";
 import { useTheme } from "next-themes";
 
+import Button from "~/components/Button";
 import { PageHead } from "~/components/PageHead";
 import Agents from "./components/Agents";
 import Cta from "./components/Cta";
@@ -17,7 +18,7 @@ const STRUCTURED_DATA = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "Kan",
-  url: "https://kan.bn",
+  url: "https://opscape.com",
   description:
     "Kanban for teams and agents. A simpler, faster alternative to Trello with a built-in MCP server.",
   applicationCategory: "BusinessApplication",
@@ -36,8 +37,8 @@ const STRUCTURED_DATA = {
   publisher: {
     "@type": "Organization",
     name: "Kan",
-    url: "https://kan.bn",
-    sameAs: ["https://github.com/kanbn/kan"],
+    url: "https://opscape.com",
+    sameAs: ["https://github.com/opscape/kan"],
   },
 };
 
@@ -51,15 +52,20 @@ export default function HomeView() {
         description="A powerful, flexible kanban app that helps you organise work, track progress, and deliver results—all in one place. Free, open source, and self-hostable."
       />
       <div className="flex h-full w-full flex-col lg:pt-20">
-        <div className="w-full pt-32 pb-10 lg:py-32">
+        <div className="w-full pt-32 lg:pb-20">
           <div className="my-10 flex h-full w-full animate-fade-down flex-col items-center justify-center px-4">
-            <p className="mt-2 text-center text-4xl font-bold text-light-1000 dark:text-dark-1000 lg:text-5xl">
+            <p className="mt-2 text-center text-4xl font-bold text-light-1000 lg:text-5xl dark:text-dark-1000">
               Opscape <br /> <span className="text-3xl lg:text-4xl">Kan</span>
             </p>
 
             <p className="text-md mt-3 max-w-[450px] text-center text-light-950 lg:max-w-[600px] lg:text-lg dark:text-dark-900">
               {t`A powerful, flexible kanban app that helps you organise work, track progress, and deliver results—all in one place.`}
             </p>
+            <div className="mt-4">
+              <Button href="/signup" size="lg">
+                {t`Get started`}
+              </Button>
+            </div>
           </div>
         </div>
 

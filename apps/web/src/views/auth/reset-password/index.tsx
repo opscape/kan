@@ -76,7 +76,7 @@ export default function ResetPasswordPage() {
 
   return (
     <>
-      <PageHead title={t`Reset password | kan.bn`} />
+      <PageHead title={t`Reset password | Opscape`} />
       <AuthLayout
         title={t`Set a new password`}
         footer={

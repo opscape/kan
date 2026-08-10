@@ -1,6 +1,6 @@
 # Kan docs
 
-The docs at [docs.kan.bn](https://docs.kan.bn), built with [Mintlify](https://mintlify.com).
+The docs at [docs.opscape.com](https://docs.opscape.com), built with [Mintlify](https://mintlify.com).
 
 ```bash
 pnpm dev            # preview on http://localhost:3001

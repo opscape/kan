@@ -55,7 +55,7 @@ export default function ForgotPasswordPage() {
 
   return (
     <>
-      <PageHead title={t`Forgot password | kan.bn`} />
+      <PageHead title={t`Forgot password | Opscape`} />
       <AuthLayout
         title={isEmailSent ? t`Check your inbox` : t`Forgot your password?`}
         footer={

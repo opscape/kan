@@ -78,7 +78,7 @@ The application will be available at http://localhost:3000 (or the port specifie
 - To restart the containers: `docker compose restart`
 - To rebuild after code changes: `docker compose up -d --build`
 
-To run the web app and API as separate containers, see [Separate containers](https://docs.kan.bn/self-hosting/introduction#separate-containers).
+To run the web app and API as separate containers, see [Separate containers](https://docs.opscape.com/self-hosting/introduction#separate-containers).
 
 ## Local Development
 
@@ -126,10 +126,10 @@ Kan ships with a [Model Context Protocol](https://modelcontextprotocol.io) (MCP)
 Run it with `npx`, no clone or global install required:
 
 ```bash
-npx -y @kan.bn/mcp
+npx -y @opscape/mcp
 ```
 
-Configure it with two environment variables: `KAN_BASE_URL` (your Kan instance) and `KAN_API_TOKEN` (from **Settings → API Keys**). Then point your client's MCP config at the `npx -y @kan.bn/mcp` command.
+Configure it with two environment variables: `KAN_BASE_URL` (your Kan instance) and `KAN_API_TOKEN` (from **Settings → API Keys**). Then point your client's MCP config at the `npx -y @opscape/mcp` command.
 
 See the [MCP Server docs](https://docs.opscape.com/mcp) for per-client config (Claude Desktop, Codex, and others), example prompts, the full tool reference, and troubleshooting.
 

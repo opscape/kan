@@ -114,19 +114,19 @@ describe("WorkspaceService.byId", () => {
     members: [
       {
         publicId: "member_1",
-        email: "henry@kan.bn",
+        email: "henry@opscape.com",
         role,
         createdAt: new Date("2026-01-01"),
         user: {
           id: "user_1",
           name: "Henry",
-          email: "henry@kan.bn",
+          email: "henry@opscape.com",
           image: null,
         },
       },
       {
         publicId: "member_2",
-        email: "other@kan.bn",
+        email: "other@opscape.com",
         role: "member",
         createdAt: new Date("2026-01-01"),
         user: null,
@@ -150,7 +150,7 @@ describe("WorkspaceService.byId", () => {
       userId: "user_1",
     });
 
-    expect(JSON.stringify(result)).not.toContain("@kan.bn");
+    expect(JSON.stringify(result)).not.toContain("@opscape.com");
     expect(result.members[1]?.user).toEqual({
       id: null,
       name: "anonymous_member_2",
@@ -168,7 +168,7 @@ describe("WorkspaceService.byId", () => {
       userId: "user_1",
     });
 
-    expect(result.members[1]).toMatchObject({ email: "other@kan.bn" });
+    expect(result.members[1]).toMatchObject({ email: "other@opscape.com" });
   });
 
   it("throws NOT_FOUND when the workspace does not exist", async () => {
@@ -191,7 +191,7 @@ describe("WorkspaceService.create", () => {
         name: "Acme",
         slug: "acme",
         userId: "user_1",
-        userEmail: "henry@kan.bn",
+        userEmail: "henry@opscape.com",
       }),
     ).rejects.toMatchObject({ status: 400 });
   });
@@ -209,7 +209,7 @@ describe("WorkspaceService.create", () => {
         name: "Acme",
         slug: "acme",
         userId: "user_1",
-        userEmail: "henry@kan.bn",
+        userEmail: "henry@opscape.com",
       }),
     ).rejects.toMatchObject({
       status: 400,
@@ -226,7 +226,7 @@ describe("WorkspaceService.create", () => {
       name: "Acme",
       slug: "",
       userId: "user_1",
-      userEmail: "henry@kan.bn",
+      userEmail: "henry@opscape.com",
     });
 
     const args = create.mock.calls[0]?.[1] as {
@@ -260,7 +260,7 @@ describe("WorkspaceService.create", () => {
     const result = await service.create({
       name: "Acme",
       userId: "user_1",
-      userEmail: "henry@kan.bn",
+      userEmail: "henry@opscape.com",
     });
 
     expect(result.plan).toBe("pro");

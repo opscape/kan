@@ -15,7 +15,7 @@ import { AuthLayout } from "../auth/components/AuthLayout";
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      <PageHead title={t`Join workspace | kan.bn`} />
+      <PageHead title={t`Join workspace | Opscape`} />
       {children}
     </>
   );
@@ -128,7 +128,7 @@ export default function InvitePage() {
         {!error ? (
           <p className="mb-6 text-center text-sm text-light-900 dark:text-dark-900">
             {isCloudEnv
-              ? t`You've been invited to join a workspace on kan.bn.`
+              ? t`You've been invited to join a workspace on Opscape.`
               : t`You've been invited to join a workspace.`}
           </p>
         ) : (

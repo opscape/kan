@@ -13,12 +13,12 @@ In Kan, open **Settings → API** and click **Create new key**. Copy it straight
 
 ## 2. Add the server
 
-The server URL is `https://mcp.kan.bn`. Send your key in the `Authorization` header.
+The server URL is `https://mcp.opscape.com`. Send your key in the `Authorization` header.
 
 <Tabs>
   <Tab title="Claude Code">
     ```bash
-    claude mcp add --transport http kan https://mcp.kan.bn \
+    claude mcp add --transport http kan https://mcp.opscape.com \
       --header "Authorization: Bearer kan_your_api_key"
     ```
   </Tab>
@@ -30,7 +30,7 @@ The server URL is `https://mcp.kan.bn`. Send your key in the `Authorization` hea
       "mcpServers": {
         "kan": {
           "type": "http",
-          "url": "https://mcp.kan.bn",
+          "url": "https://mcp.opscape.com",
           "headers": { "Authorization": "Bearer kan_your_api_key" }
         }
       }
@@ -39,7 +39,7 @@ The server URL is `https://mcp.kan.bn`. Send your key in the `Authorization` hea
 
   </Tab>
   <Tab title="Other clients">
-    Add a streamable HTTP server with the URL `https://mcp.kan.bn` and the header `Authorization: Bearer kan_your_api_key`.
+    Add a streamable HTTP server with the URL `https://mcp.opscape.com` and the header `Authorization: Bearer kan_your_api_key`.
   </Tab>
 </Tabs>
 
@@ -81,9 +81,9 @@ Run the server on your own machine with `npx`. It works with Kan Cloud on any pl
       "mcpServers": {
         "kan": {
           "command": "npx",
-          "args": ["-y", "@kan.bn/mcp"],
+          "args": ["-y", "@opscape.com/mcp"],
           "env": {
-            "KAN_BASE_URL": "https://kan.bn",
+            "KAN_BASE_URL": "https://opscape.com",
             "KAN_API_TOKEN": "kan_your_api_key"
           }
         }
@@ -97,17 +97,17 @@ Run the server on your own machine with `npx`. It works with Kan Cloud on any pl
     ```toml
     [mcp_servers.kan]
     command = "npx"
-    args = ["-y", "@kan.bn/mcp"]
-    env = { "KAN_BASE_URL" = "https://kan.bn", "KAN_API_TOKEN" = "kan_your_api_key" }
+    args = ["-y", "@opscape.com/mcp"]
+    env = { "KAN_BASE_URL" = "https://opscape.com", "KAN_API_TOKEN" = "kan_your_api_key" }
     ```
 
   </Tab>
   <Tab title="Other clients">
-    Run `npx -y @kan.bn/mcp` as a stdio server with two environment variables:
+    Run `npx -y @opscape.com/mcp` as a stdio server with two environment variables:
 
     | Variable | Value |
     | --- | --- |
-    | `KAN_BASE_URL` | `https://kan.bn`, or your own Kan URL |
+    | `KAN_BASE_URL` | `https://opscape.com`, or your own Kan URL |
     | `KAN_API_TOKEN` | Your API key |
 
   </Tab>

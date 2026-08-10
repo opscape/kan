@@ -31,7 +31,7 @@ export function ApiUnavailableBanner() {
       {t`Kan can't reach its API service.`}{" "}
       {env("NEXT_PUBLIC_KAN_ENV") !== "cloud" && (
         <a
-          href="https://docs.kan.bn/self-hosting/introduction#separate-containers"
+          href="https://docs.opscape.com/self-hosting/introduction#separate-containers"
           target="_blank"
           rel="noreferrer"
           className="font-semibold underline"

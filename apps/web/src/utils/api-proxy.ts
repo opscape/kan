@@ -29,7 +29,7 @@ const log = createLogger("api-proxy");
 
 const API_UNAVAILABLE = "API_UNAVAILABLE";
 const UPGRADE_DOCS =
-  "See https://docs.kan.bn/self-hosting/introduction#separate-containers";
+  "See https://docs.opscape.com/self-hosting/introduction#separate-containers";
 
 // localhost covers running from source, where `pnpm start` runs both apps.
 export const getApiBaseUrl = () =>

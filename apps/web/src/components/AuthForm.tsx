@@ -242,11 +242,14 @@ export function Auth({
         );
       }
     } else {
-      if (isCloudEnv || (isEmailSendingEnabled && !isSignUp)) {
+      if (isCloudEnv || isEmailSendingEnabled) {
         await authClient.signIn.magicLink(
           {
             email,
             callbackURL,
+            newUserCallbackURL: `/onboarding/profile?returnUrl=${encodeURIComponent(
+              callbackURL,
+            )}`,
           },
           {
             onSuccess: () => setIsMagicLinkSent(true, email),
@@ -294,7 +297,7 @@ export function Auth({
   const password = watch("password");
 
   const isMagicLinkAvailable = useMemo(() => {
-    return isCloudEnv || (isEmailSendingEnabled && !isSignUp);
+    return isEmailSendingEnabled && (isCloudEnv || !isSignUp);
   }, [isCloudEnv, isEmailSendingEnabled, isSignUp]);
 
   const isMagicLinkMode = useMemo(() => {

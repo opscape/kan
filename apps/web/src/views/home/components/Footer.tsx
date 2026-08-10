@@ -65,10 +65,10 @@ const Footer = () => {
         name: t`API Reference`,
         href: "https://docs.opscape.com/api-reference/introduction",
       },
-      { name: t`MCP server`, href: "https://docs.kan.bn/mcp" },
+      { name: t`MCP server`, href: "https://docs.opscape.com/mcp" },
       {
         name: t`Self-hosting`,
-        href: "https://docs.kan.bn/guides/self-hosting/introduction",
+        href: "https://docs.opscape.com/guides/self-hosting/introduction",
       },
     ],
     company: [
@@ -149,7 +149,7 @@ const Footer = () => {
           </div>
         </div>
         <p className="mt-16 text-xs text-light-900 dark:text-dark-800">
-          © {new Date().getFullYear()} Open Engineering
+          © {new Date().getFullYear()} Opscape
         </p>
       </div>
     </footer>

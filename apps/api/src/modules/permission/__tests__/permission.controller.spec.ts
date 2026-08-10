@@ -18,7 +18,7 @@ const mockPermissionService = {
   grantRolePermission: vi.fn(),
   revokeRolePermission: vi.fn(),
 };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let controller: PermissionController;
 

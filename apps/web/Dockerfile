@@ -190,7 +190,7 @@ CMD ["main.mjs"]
 # ============================================
 # Stage 8: All-in-one image (web and api in one container)
 # ============================================
-# Published as ghcr.io/kanbn/kan so single-container installs keep working:
+# Published as ghcr.io/opscape/kan so single-container installs keep working:
 # bootstrap.cjs starts the API itself when KAN_API_URL is unset.
 FROM web AS aio
 

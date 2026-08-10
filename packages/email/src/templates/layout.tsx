@@ -71,7 +71,7 @@ export const EmailLayout = ({
                 letterSpacing: "-0.02em",
               }}
             >
-              kan.bn
+              Opscape
             </Text>
           )}
           <Heading

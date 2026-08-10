@@ -89,7 +89,7 @@ const Agents = () => {
         <p className="mt-4 max-w-[440px] text-sm text-pretty text-light-900 dark:text-dark-800">
           {t`Kan's built-in MCP server lets agents work on your boards alongside your team.`}{" "}
           <Link
-            href="https://docs.kan.bn/mcp"
+            href="https://docs.opscape.com/mcp"
             target="_blank"
             rel="noopener noreferrer"
             className="text-light-1000 underline-offset-4 hover:underline dark:text-dark-1000"

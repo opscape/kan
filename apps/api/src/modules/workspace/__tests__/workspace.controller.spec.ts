@@ -20,7 +20,7 @@ const mockWorkspaceService = {
   update: vi.fn(),
   delete: vi.fn(),
 };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let controller: WorkspaceController;
 
@@ -109,7 +109,7 @@ describe("WorkspaceController", () => {
       description: undefined,
       slug: "acme",
       userId: "user_1",
-      userEmail: "henry@kan.bn",
+      userEmail: "henry@opscape.com",
     });
   });
 

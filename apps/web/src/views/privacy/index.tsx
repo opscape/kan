@@ -29,7 +29,7 @@ export default function PrivacyView() {
             <SubHeading>Introduction</SubHeading>
             <Text>
               This policy explains how {NAME} (“we”, “us”) collects and uses
-              personal data when you use Kan at kan.bn and its related websites,
+              personal data when you use Kan at Opscape and its related websites,
               apps and APIs (the “Service”). We are the data controller for
               account and billing data. For the content you add to a workspace,
               we process it on behalf of that workspace.

@@ -29,7 +29,7 @@ export default function TermsView() {
             <SubHeading>Introduction</SubHeading>
             <Text>
               These Terms of Service (“Terms”) govern your use of Kan, the
-              hosted service at kan.bn and its related websites, apps and APIs
+              hosted service at Opscape and its related websites, apps and APIs
               (the “Service”), operated by {NAME} (“we”, “us”). By creating an
               account or using the Service you agree to these Terms and to our{" "}
               <Link href="/privacy">Privacy Policy</Link>. If you are using the

@@ -107,17 +107,9 @@ const Header = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
                     {t`Go to app`}
                   </Button>
                 ) : (
-                  <div className="flex items-center justify-end gap-2">
-                    <Link
-                      href="/login"
-                      className="px-2 text-xs font-medium text-light-900 transition-colors hover:text-light-1000 dark:text-dark-800 dark:hover:text-dark-1000"
-                    >
-                      {t`Sign in`}
-                    </Link>
-                    <Button href="/signup" size="sm">
-                      {t`Get started`}
-                    </Button>
-                  </div>
+                  <Button href="/login" size="sm">
+                    {t`Sign in`}
+                  </Button>
                 )}
               </div>
               {/* Hamburger Menu Button */}

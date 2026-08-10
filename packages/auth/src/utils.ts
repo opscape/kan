@@ -1,4 +1,7 @@
-export async function downloadImage(url: string): Promise<Buffer> {
+export async function downloadImage(url: string): Promise<{
+  buffer: Buffer;
+  contentType: string | null;
+}> {
   const response = await fetch(url);
   if (!response.ok) {
     throw new Error(`Failed to download image: ${response.statusText}`);

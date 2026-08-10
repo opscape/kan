@@ -23,7 +23,7 @@ export default function HomeView() {
               Opscape <br /> <span className="text-3xl lg:text-4xl">Kan</span>
             </p>
 
-            <p className="text-md mt-3 max-w-[450px] text-center text-light-950 dark:text-dark-900 lg:max-w-[600px] lg:text-lg">
+            <p className="text-md mt-3 max-w-[450px] text-center text-light-950 dark:text-dark-950 lg:max-w-[600px] lg:text-lg">
               {t`A powerful, flexible kanban app that helps you organise work, track progress, and deliver results—all in one place.`}
             </p>
           </div>

@@ -68,24 +68,24 @@ const TestimonialCard = ({
               href={testimonial.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="-mt-1 block text-sm text-light-800 transition-colors hover:text-light-900 dark:text-dark-800 dark:hover:text-dark-900"
+              className="-mt-1 block text-sm text-light-950 transition-colors hover:text-light-1000 dark:text-dark-950 dark:hover:text-dark-1000"
             >
               {testimonial.handle}
             </a>
           ) : (
-            <p className="-mt-0.5 block text-sm text-light-800 dark:text-dark-800">
+            <p className="-mt-0.5 block text-sm text-light-950 dark:text-dark-950">
               {testimonial.handle}
             </p>
           )}
           {testimonial.role && (
-            <p className="text-xs text-light-600 dark:text-dark-600">
+            <p className="text-xs text-light-950 dark:text-dark-950">
               {testimonial.role}
             </p>
           )}
         </div>
       </div>
 
-      <div className="mt-4 text-sm leading-relaxed text-light-950 dark:text-dark-900">
+      <div className="mt-4 text-sm leading-relaxed text-light-950 dark:text-dark-950">
         <p>{testimonial.text}</p>
       </div>
     </div>
@@ -228,14 +228,14 @@ const Testimonials = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center px-4 pb-24">
-        <div className="flex items-center gap-2 rounded-full border bg-light-50 px-4 py-1 text-center text-xs text-light-1000 dark:border-dark-300 dark:bg-dark-50 dark:text-dark-900 lg:text-sm">
+        <div className="flex items-center gap-2 rounded-full border bg-light-50 px-4 py-1 text-center text-xs text-light-1000 dark:border-dark-300 dark:bg-dark-50 dark:text-dark-950 lg:text-sm">
           <p>{t`Testimonials`}</p>
         </div>
 
         <p className="mt-2 text-center text-3xl font-bold text-light-1000 dark:text-dark-1000 lg:text-4xl">
           {t`Loved by teams worldwide`}
         </p>
-        <p className="text-md lg:text-md mt-3 max-w-[500px] text-center text-light-950 dark:text-dark-900">
+        <p className="text-md lg:text-md mt-3 max-w-[500px] text-center text-light-950 dark:text-dark-950">
           {t`See what our users are saying about Kan`}
         </p>
 

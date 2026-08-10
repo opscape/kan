@@ -6,7 +6,7 @@ import { FeedbackController } from "../feedback.controller.js";
 import { FeedbackService } from "../feedback.service.js";
 
 const mockFeedbackService = { create: vi.fn() };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let controller: FeedbackController;
 
@@ -27,13 +27,13 @@ describe("FeedbackController", () => {
 
     const result = await controller.create(user as never, {
       feedback: "more filters please",
-      url: "https://kan.bn/boards/1",
+      url: "https://opscape.com/boards/1",
     });
 
     expect(result).toEqual({ success: true });
     expect(mockFeedbackService.create).toHaveBeenCalledWith({
       feedback: "more filters please",
-      url: "https://kan.bn/boards/1",
+      url: "https://opscape.com/boards/1",
       userId: "user_1",
     });
   });

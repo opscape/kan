@@ -8,7 +8,7 @@ import { UserService } from "../user.service.js";
 
 const dbUser = {
   id: "user_1",
-  email: "henry@kan.bn",
+  email: "henry@opscape.com",
   name: "Henry",
   image: "avatars/user_1.png",
   stripeCustomerId: null,
@@ -35,7 +35,7 @@ describe("UserService.getUser", () => {
 
     expect(result).toEqual({
       id: "user_1",
-      email: "henry@kan.bn",
+      email: "henry@opscape.com",
       name: "Henry",
       image: "https://signed/avatar.png",
       stripeCustomerId: null,

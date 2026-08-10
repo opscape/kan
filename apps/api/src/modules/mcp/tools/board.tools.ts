@@ -176,7 +176,7 @@ export class BoardTools {
   @Tool({
     name: "get_board_by_slug",
     description:
-      "Get a public board by its workspace slug and board slug, e.g. from a kan.bn/<workspace>/<board> link. Only works for boards with public visibility.",
+      "Get a public board by its workspace slug and board slug, e.g. from a opscape.com/<workspace>/<board> link. Only works for boards with public visibility.",
     parameters: BoardSlugSchema,
   })
   async getBoardBySlug(

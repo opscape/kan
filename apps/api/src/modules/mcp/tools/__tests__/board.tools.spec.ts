@@ -10,7 +10,7 @@ import { WorkspaceTools } from "../workspace.tools.js";
 
 const mockBoardService = { all: vi.fn(), byId: vi.fn(), bySlug: vi.fn() };
 const mockWorkspaceService = { all: vi.fn() };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 const acme = { publicId: "ws_acme12345", name: "Acme" };
 
 let boardTools: BoardTools;

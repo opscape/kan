@@ -14,7 +14,7 @@ const mockMemberService = {
   createInviteLink: vi.fn(),
   deactivateInviteLink: vi.fn(),
 };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let tools: MemberTools;
 
@@ -36,7 +36,7 @@ describe("MemberTools", () => {
     mockMemberService.invite.mockResolvedValue({ publicId: "member_1" });
 
     const result = await tools.inviteMember(
-      { workspacePublicId: "workspace_12345", email: "new@kan.bn" },
+      { workspacePublicId: "workspace_12345", email: "new@opscape.com" },
       undefined,
       { user, headers: { cookie: "session=abc" } },
     );
@@ -47,7 +47,7 @@ describe("MemberTools", () => {
     };
     expect(call).toMatchObject({
       workspacePublicId: "workspace_12345",
-      email: "new@kan.bn",
+      email: "new@opscape.com",
       userId: "user_1",
     });
     expect(call.headers).toBeInstanceOf(Headers);
@@ -118,7 +118,7 @@ describe("MemberTools", () => {
     mockMemberService.createInviteLink.mockResolvedValue({
       publicId: "invite_1",
       inviteCode: "code123",
-      inviteLink: "https://kan.bn/invite/code123",
+      inviteLink: "https://opscape.com/invite/code123",
       expiresAt: null,
     });
 

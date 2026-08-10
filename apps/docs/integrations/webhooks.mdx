@@ -27,7 +27,7 @@ Workspace admins manage webhooks in **Settings → Webhooks**.
   </Tab>
   <Tab title="API">
     ```bash
-    curl -X POST https://kan.bn/api/v1/workspaces/$WORKSPACE/webhooks \
+    curl -X POST https://opscape.com/api/v1/workspaces/$WORKSPACE/webhooks \
       -H "Authorization: Bearer $KAN_API_KEY" -H "content-type: application/json" \
       -d '{"name": "Slack", "url": "https://example.com/kan", "secret": "'$SECRET'", "events": ["card.created", "card.moved"]}'
     ```

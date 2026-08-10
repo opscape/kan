@@ -6,14 +6,14 @@ describe("CreateFeedbackSchema", () => {
   it("accepts a valid payload", () => {
     const result = CreateFeedbackSchema.safeParse({
       feedback: "more filters please",
-      url: "https://kan.bn/boards/1",
+      url: "https://opscape.com/boards/1",
     });
 
     expect(result.success).toBe(true);
   });
 
   it.each([
-    ["empty feedback", { feedback: "", url: "https://kan.bn" }],
+    ["empty feedback", { feedback: "", url: "https://opscape.com" }],
     ["empty url", { feedback: "hi", url: "" }],
     ["missing url", { feedback: "hi" }],
   ])("rejects %s", (_name, payload) => {

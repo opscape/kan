@@ -7,7 +7,7 @@ import { FeedbackService } from "../../../feedback/feedback.service.js";
 import { FeedbackTools } from "../feedback.tools.js";
 
 const mockFeedbackService = { create: vi.fn() };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let tools: FeedbackTools;
 
@@ -29,7 +29,7 @@ describe("FeedbackTools", () => {
     mockFeedbackService.create.mockResolvedValue({ success: true });
 
     const result = await tools.submitFeedback(
-      { feedback: "more filters please", url: "https://kan.bn/boards/1" },
+      { feedback: "more filters please", url: "https://opscape.com/boards/1" },
       undefined,
       { user },
     );
@@ -37,7 +37,7 @@ describe("FeedbackTools", () => {
     expect(result).toEqual({ success: true });
     expect(mockFeedbackService.create).toHaveBeenCalledWith({
       feedback: "more filters please",
-      url: "https://kan.bn/boards/1",
+      url: "https://opscape.com/boards/1",
       userId: "user_1",
     });
   });
@@ -45,7 +45,7 @@ describe("FeedbackTools", () => {
   it("rejects when the MCP request has no authenticated user", async () => {
     await expect(
       tools.submitFeedback(
-        { feedback: "more filters please", url: "https://kan.bn/boards/1" },
+        { feedback: "more filters please", url: "https://opscape.com/boards/1" },
         undefined,
         undefined,
       ),

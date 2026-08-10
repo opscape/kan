@@ -15,7 +15,7 @@ vi.mock("@kan/logger", () => ({
 }));
 
 const request = vi.fn();
-vi.mock("@kan.bn/mcp/client", () => ({
+vi.mock("@opscape/mcp/client", () => ({
   createKanClient: vi.fn(() => ({ request })),
   KanApiError: class KanApiError extends Error {
     constructor(
@@ -30,7 +30,7 @@ vi.mock("@kan.bn/mcp/client", () => ({
 
 const connect = vi.fn().mockResolvedValue(undefined);
 const close = vi.fn().mockResolvedValue(undefined);
-vi.mock("@kan.bn/mcp", () => ({
+vi.mock("@opscape/mcp", () => ({
   createKanMcpServer: vi.fn(() => ({ connect, close })),
 }));
 
@@ -43,7 +43,7 @@ vi.mock("@modelcontextprotocol/sdk/server/streamableHttp.js", () => ({
 
 const { env } = await import("next-runtime-env");
 const mockedEnv = vi.mocked(env);
-const { createKanClient } = await import("@kan.bn/mcp/client");
+const { createKanClient } = await import("@opscape/mcp/client");
 const mockedCreateKanClient = vi.mocked(createKanClient);
 const { clearPaidWorkspaceCache } = await import(
   "@kan/server/utils/paidWorkspaceCache"
@@ -195,7 +195,7 @@ describe("POST /api/mcp", () => {
       if (key === "NEXT_PUBLIC_KAN_ENV") return "cloud";
       return undefined;
     });
-    const { KanApiError } = await import("@kan.bn/mcp/client");
+    const { KanApiError } = await import("@opscape/mcp/client");
     request.mockRejectedValueOnce(
       new KanApiError(429, "Too Many Requests", {
         message: "Too many requests, please try again later.",

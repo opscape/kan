@@ -5,11 +5,11 @@ import { describe, expect, it } from "vitest";
 import { repairSessionCookies } from "./session-cookie-repair";
 
 const cloud: BetterAuthOptions = {
-  baseURL: "https://kan.bn",
+  baseURL: "https://opscape.com",
   session: { expiresIn: 2592000 },
   advanced: {
     cookiePrefix: "kan",
-    crossSubDomainCookies: { enabled: true, domain: "kan.bn" },
+    crossSubDomainCookies: { enabled: true, domain: "opscape.com" },
     defaultCookieAttributes: { sameSite: "lax", secure: true },
   },
 };
@@ -42,7 +42,7 @@ describe("repairSessionCookies", () => {
     expect(headers[0]).not.toContain("Domain=");
     expect(headers[1]).toMatch(
       new RegExp(
-        `^${session}=token.signature; Path=/; Domain=kan.bn; Max-Age=2592000`,
+        `^${session}=token.signature; Path=/; Domain=opscape.com; Max-Age=2592000`,
       ),
     );
   });

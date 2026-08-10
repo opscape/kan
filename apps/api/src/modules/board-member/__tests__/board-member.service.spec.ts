@@ -20,7 +20,7 @@ const activeMember = {
   id: 2,
   publicId: "member_12345",
   workspaceId: 1,
-  email: "member@kan.bn",
+  email: "member@opscape.com",
   status: "active",
   deletedAt: null,
 };
@@ -49,13 +49,13 @@ describe("BoardMemberService.all", () => {
         createdAt: new Date("2024-01-01"),
         member: {
           publicId: "member_12345",
-          email: "member@kan.bn",
+          email: "member@opscape.com",
           role: "member",
           status: "active",
           user: {
             id: "user_2",
             name: "Jo",
-            email: "member@kan.bn",
+            email: "member@opscape.com",
             image: null,
           },
         },
@@ -70,12 +70,12 @@ describe("BoardMemberService.all", () => {
     expect(result).toEqual([
       {
         publicId: "member_12345",
-        email: "member@kan.bn",
+        email: "member@opscape.com",
         status: "active",
         role: "admin",
         workspaceRole: "member",
         createdAt: "2024-01-01T00:00:00.000Z",
-        user: { id: "user_2", name: "Jo", email: "member@kan.bn", image: null },
+        user: { id: "user_2", name: "Jo", email: "member@opscape.com", image: null },
       },
     ]);
   });

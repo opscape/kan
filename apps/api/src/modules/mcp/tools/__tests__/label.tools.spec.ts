@@ -12,7 +12,7 @@ const mockLabelService = {
   update: vi.fn(),
   delete: vi.fn(),
 };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let tools: LabelTools;
 

@@ -13,7 +13,7 @@ const mockIntegrationService = {
   disconnectGitHub: vi.fn(),
   getGitHubStatus: vi.fn(),
 };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let controller: IntegrationController;
 

@@ -7,7 +7,7 @@ import { UserService } from "../../../user/user.service.js";
 import { UserTools } from "../user.tools.js";
 
 const mockUserService = { getUser: vi.fn(), update: vi.fn() };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let tools: UserTools;
 

@@ -1,10 +1,10 @@
 {
-  "name": "@kan.bn/mcp",
+  "name": "@opscape/mcp",
   "version": "0.1.0",
   "description": "MCP server for Kan — control workspaces, boards, lists, and cards via AI",
   "type": "module",
   "bin": {
-    "kan-mcp": "./dist/index.js"
+    "kan-mcp": "./bin/kan-mcp.js"
   },
   "exports": {
     ".": {
@@ -17,6 +17,7 @@
     }
   },
   "files": [
+    "bin",
     "dist",
     "README.md"
   ],

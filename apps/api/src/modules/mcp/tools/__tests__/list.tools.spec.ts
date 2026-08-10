@@ -7,7 +7,7 @@ import { ListService } from "../../../list/list.service.js";
 import { ListTools } from "../list.tools.js";
 
 const mockListService = { create: vi.fn(), delete: vi.fn(), update: vi.fn() };
-const user = { id: "user_1", email: "henry@kan.bn" };
+const user = { id: "user_1", email: "henry@opscape.com" };
 
 let tools: ListTools;
 

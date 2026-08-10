@@ -12,7 +12,7 @@ const mockWebhookService = {
   delete: vi.fn(),
   test: vi.fn(),
 };
-const user = { id: "user_1", name: "Henry", email: "henry@kan.bn" };
+const user = { id: "user_1", name: "Henry", email: "henry@opscape.com" };
 
 let controller: WebhookController;
 

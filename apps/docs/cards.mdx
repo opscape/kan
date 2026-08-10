@@ -26,7 +26,7 @@ A card is a piece of work. Click one to open it. Everything on a card is optiona
   </Tab>
   <Tab title="API">
     ```bash
-    curl -X POST https://kan.bn/api/v1/cards \
+    curl -X POST https://opscape.com/api/v1/cards \
       -H "Authorization: Bearer $KAN_API_KEY" -H "content-type: application/json" \
       -d '{"listPublicId": "'$LIST'", "title": "Fix login bug", "description": "", "position": "end", "labelPublicIds": [], "memberPublicIds": [], "dueDate": "2026-12-01T00:00:00.000Z"}'
     ```

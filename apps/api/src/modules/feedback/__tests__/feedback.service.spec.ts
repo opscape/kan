@@ -12,7 +12,7 @@ describe("FeedbackService", () => {
     const service = new FeedbackService();
     const result = await service.create({
       feedback: "more filters please",
-      url: "https://kan.bn/boards/1",
+      url: "https://opscape.com/boards/1",
       userId: "user_1",
     });
 
@@ -26,7 +26,7 @@ describe("FeedbackService", () => {
     await expect(
       service.create({
         feedback: "more filters please",
-        url: "https://kan.bn/boards/1",
+        url: "https://opscape.com/boards/1",
         userId: "user_1",
       }),
     ).rejects.toBeInstanceOf(InternalServerErrorException);

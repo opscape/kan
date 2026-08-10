@@ -27,7 +27,7 @@ const Pricing = () => {
     {
       name: t`Individuals`,
       id: "tier-individuals",
-      href: "signup",
+      href: "login",
       buttonText: t`Get Started`,
       price: { monthly: t`Free`, annually: t`Free` },
       description: t`Everything you need, free forever. Unlimited boards, unlimited lists, unlimited cards. Upgrade any time.`,
@@ -45,7 +45,7 @@ const Pricing = () => {
     {
       name: t`Teams`,
       id: "tier-teams",
-      href: "signup",
+      href: "login",
       buttonText: t`Get Started`,
       price: { monthly: "$10.00", annually: "$8.00" },
       description: t`Kanban is better with a team. Perfect for small and growing teams looking to collaborate.`,

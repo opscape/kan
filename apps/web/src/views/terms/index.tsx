@@ -40,7 +40,7 @@ export default function TermsView() {
             <h2>Terms of Service</h2>
           </div>
           <p className="mb-6 text-sm text-light-1000 dark:text-dark-900">
-            Last updated: 26rd Feb 2025
+            Last updated: 26 Feb 2025
           </p>
           <div className="mb-6">
             <SubHeading>Introduction</SubHeading>

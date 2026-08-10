@@ -10,8 +10,8 @@ Kan ships with a [Model Context Protocol](https://modelcontextprotocol.io) (MCP)
 
 <CardGroup cols={2}>
   <Card title="Hosted" icon="cloud" color="#0284c7">
-    Point your client at `https://mcp.kan.bn` with an API key. No install, no
-    environment variables. **Requires a Team, Pro, or Enterprise workspace
+    Point your client at `https://mcp.opscape.com` with an API key. No install,
+    no environment variables. **Requires a Team, Pro, or Enterprise workspace
     plan** on Kan Cloud.
   </Card>
   <Card title="Local" icon="terminal" color="#65a30d">
@@ -31,7 +31,7 @@ Kan ships with a [Model Context Protocol](https://modelcontextprotocol.io) (MCP)
 Get a Kan Cloud API key from **Settings → API Keys → Create key**, then point your client at:
 
 ```
-https://mcp.kan.bn
+https://mcp.opscape.com
 ```
 
 authenticating with:
@@ -47,7 +47,7 @@ For example, in Claude Desktop's config:
   "mcpServers": {
     "kan": {
       "type": "http",
-      "url": "https://mcp.kan.bn",
+      "url": "https://mcp.opscape.com",
       "headers": {
         "Authorization": "Bearer kan_your_api_key_here"
       }
@@ -100,7 +100,7 @@ The server is configured via two environment variables:
 <Tabs>
   <Tab title="Kan Cloud">
     ```bash
-    KAN_BASE_URL=https://kan.bn
+    KAN_BASE_URL=https://opscape.com
     ```
 
   </Tab>
@@ -223,7 +223,7 @@ The MCP server exposes 46 tools across 7 resource types:
 <AccordionGroup>
   <Accordion title="The hosted endpoint returns a 403">
     The API key's account doesn't have a Team, Pro, or Enterprise workspace. The
-    hosted server (`mcp.kan.bn`) is a paid-plan feature. Either upgrade a
+    hosted server (`mcp.opscape.com`) is a paid-plan feature. Either upgrade a
     workspace, or switch to the Local setup above, which works on any plan.
   </Accordion>
   <Accordion title="Every tool call fails with an authentication error">

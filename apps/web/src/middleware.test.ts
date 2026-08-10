@@ -60,7 +60,7 @@ describe("middleware", () => {
     );
   });
 
-  it.each(["mcp.kan.bn", "mcp-staging.kan.bn"])(
+  it.each(["mcp.opscape.com", "mcp-staging.opscape.com"])(
     "rewrites requests with Host: %s to /api/mcp",
     (host) => {
       mockedEnv.mockImplementation((key) => {
@@ -84,7 +84,7 @@ describe("middleware", () => {
 
     const response = middleware(
       new NextRequest("http://localhost:3000/", {
-        headers: { host: "kan.bn" },
+        headers: { host: "opscape.com" },
       }),
     );
 

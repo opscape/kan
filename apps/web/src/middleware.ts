@@ -2,7 +2,7 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { env } from "next-runtime-env";
 
-const MCP_HOSTNAMES = new Set(["mcp.kan.bn", "mcp-staging.kan.bn"]);
+const MCP_HOSTNAMES = new Set(["mcp.opscape.com", "mcp-staging.opscape.com"]);
 
 function resolveLoginUrl(request: NextRequest) {
   const publicBaseUrl = env("NEXT_PUBLIC_BASE_URL");

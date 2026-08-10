@@ -4,6 +4,7 @@ import "~/utils/i18n";
 import type { NextPage } from "next";
 import type { AppProps, AppType } from "next/app";
 import type { ReactElement, ReactNode } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import Head from "next/head";
 import Script from "next/script";
@@ -84,22 +85,7 @@ const MyApp: AppType = ({ Component, pageProps }: AppPropsWithLayout) => {
           data-website-id={env("NEXT_PUBLIC_UMAMI_ID")}
         />
       )}
-      {gaId && (
-        <>
-          <Script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-          />
-          <Script id="google-analytics">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${gaId}');
-            `}
-          </Script>
-        </>
-      )}
+      {gaId && <GoogleAnalytics gaId={gaId} />}
       <script src="/__ENV.js" />
       <main className="font-sans">
         <KeyboardShortcutProvider>

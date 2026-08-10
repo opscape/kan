@@ -92,7 +92,7 @@ describe("middleware", () => {
     },
   );
 
-  it.each(["mcp.kan.bn", "mcp-staging.kan.bn"])(
+  it.each(["mcp.opscape.com", "mcp-staging.opscape.com"])(
     "rewrites requests with Host: %s to /api/mcp",
     (host) => {
       mockedEnv.mockImplementation((key) => {

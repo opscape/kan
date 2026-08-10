@@ -146,20 +146,6 @@ export default function UserMenu({
               </Menu.Item>
               <Menu.Item>
                 <button
-                  onClick={() => setTheme("dark")}
-                  className="flex w-full items-center rounded-[5px] px-3 py-2 text-left text-xs hover:bg-light-200 dark:hover:bg-dark-400"
-                >
-                  <span
-                    className={twMerge(
-                      theme === "dark" ? "visible" : "invisible",
-                      "mr-4 h-[6px] w-[6px] rounded-full bg-light-900 dark:bg-dark-900",
-                    )}
-                  />
-                  {t`Dark`}
-                </button>
-              </Menu.Item>
-              <Menu.Item>
-                <button
                   onClick={() => setTheme("light")}
                   className="flex w-full items-center rounded-[5px] px-3 py-2 text-left text-xs hover:bg-light-200 dark:hover:bg-dark-400"
                 >
@@ -170,6 +156,20 @@ export default function UserMenu({
                     )}
                   />
                   {t`Light`}
+                </button>
+              </Menu.Item>
+              <Menu.Item>
+                <button
+                  onClick={() => setTheme("dark")}
+                  className="flex w-full items-center rounded-[5px] px-3 py-2 text-left text-xs hover:bg-light-200 dark:hover:bg-dark-400"
+                >
+                  <span
+                    className={twMerge(
+                      theme === "dark" ? "visible" : "invisible",
+                      "mr-4 h-[6px] w-[6px] rounded-full bg-light-900 dark:bg-dark-900",
+                    )}
+                  />
+                  {t`Dark`}
                 </button>
               </Menu.Item>
             </div>

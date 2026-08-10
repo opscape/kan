@@ -2,6 +2,7 @@ import Image from "next/image";
 import { t } from "@lingui/core/macro";
 import { useTheme } from "next-themes";
 
+import Button from "~/components/Button";
 import { PageHead } from "~/components/PageHead";
 import Cta from "./components/Cta";
 import FAQs from "./components/Faqs";
@@ -18,7 +19,7 @@ export default function HomeView() {
       <PageHead title="Opscape | The open source alternative to Trello" />
       <div className="flex h-full w-full flex-col lg:pt-[5rem]">
         <div className="w-full pb-10 pt-32 lg:py-32">
-          <div className="my-10 flex h-full w-full animate-fade-down flex-col items-center justify-center px-4">
+          <div className="relative my-10 flex h-full w-full animate-fade-down flex-col items-center justify-center px-4">
             <p className="mt-2 text-center text-4xl font-bold text-light-1000 dark:text-dark-1000 lg:text-5xl">
               Opscape <br /> <span className="text-3xl lg:text-4xl">Kan</span>
             </p>
@@ -26,6 +27,11 @@ export default function HomeView() {
             <p className="text-md mt-3 max-w-[450px] text-center text-light-950 dark:text-dark-950 lg:max-w-[600px] lg:text-lg">
               {t`A powerful, flexible kanban app that helps you organise work, track progress, and deliver results—all in one place.`}
             </p>
+            <div className="absolute left-1/2 top-full mt-4 -translate-x-1/2">
+              <Button href="/login" size="lg">
+                {t`Get started`}
+              </Button>
+            </div>
           </div>
         </div>
         <div className="px-4 pb-10">
@@ -35,14 +41,14 @@ export default function HomeView() {
                 src={`/hero-light.png`}
                 alt="kanban"
                 width={1100}
-                height={1000}
+                height={600}
                 className="block dark:hidden"
               />
               <Image
                 src={`/hero-dark.png`}
                 alt="kanban"
                 width={1100}
-                height={1000}
+                height={600}
                 className="hidden dark:block"
               />
             </div>

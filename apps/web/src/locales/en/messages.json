@@ -5516,7 +5516,7 @@
     "translation": "For long-term sustainability, we recognise all good open source projects need a source of revenue. Ours comes from the paid cloud offering for workspaces with multiple users and for custom workspace slugs. There's no obligation to use it, and you can self-host the software on your own infrastructure free of charge."
   },
   "GbjlZL": {
-    "message": "Forgot password | kan.bn",
+    "message": "Forgot password | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -5525,7 +5525,7 @@
         58
       ]
     ],
-    "translation": "Forgot password | kan.bn"
+    "translation": "Forgot password | Opscape"
   },
   "UNMVei": {
     "message": "Forgot password?",
@@ -9379,7 +9379,7 @@
     "translation": "Reset password"
   },
   "S57AHL": {
-    "message": "Reset password | kan.bn",
+    "message": "Reset password | Opscape",
     "placeholders": {},
     "comments": [],
     "origin": [
@@ -9388,7 +9388,7 @@
         79
       ]
     ],
-    "translation": "Reset password | kan.bn"
+    "translation": "Reset password | Opscape"
   },
   "e4hPSt": {
     "message": "Reset to role defaults",

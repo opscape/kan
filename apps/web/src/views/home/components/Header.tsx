@@ -39,7 +39,11 @@ const Header = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
       group: "Resources",
     },
     { label: t`FAQ`, href: "/#faq", group: "Resources" },
-    { label: t`Contact`, href: "mailto:support@opscape.com", group: "Resources" },
+    {
+      label: t`Contact`,
+      href: "mailto:support@opscape.com",
+      group: "Resources",
+    },
   ];
 
   // Group mobile menu items by their group property
@@ -142,7 +146,7 @@ const Header = ({ isLoggedIn }: { isLoggedIn: boolean }) => {
           <div className="mt-[6rem] flex h-full flex-col space-y-8 px-5">
             {Object.entries(groupedMenuItems).map(([group, items]) => (
               <div key={group} className="flex flex-col space-y-4">
-                <div className="text-sm font-bold text-light-900 dark:text-dark-900">
+                <div className="text-sm font-bold text-light-950 dark:text-dark-950">
                   {group}
                 </div>
                 {items.map((item) => (
